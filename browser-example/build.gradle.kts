@@ -20,7 +20,7 @@ kotlin {
 //                devServer = (devServer ?: KotlinWebpackConfig.DevServer()).copy(
 //                    open = mapOf(
 //                        "app" to mapOf(
-//                            "name" to "google chrome canary", // "edge"
+//                            "name" to "google chrome", // "edge"
 //                            "arguments" to listOf("--js-flags=--experimental-wasm-gc")
 //                        )
 //                    ),
