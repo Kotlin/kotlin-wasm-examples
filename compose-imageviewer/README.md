@@ -14,6 +14,8 @@ Learn more about [Compose Multiplatform](https://github.com/JetBrains/compose-mu
 
 Web version of an image gallery for remote server image viewing built with Compose Multiplatform.
 
+![](screenshots/imageviewer-web.png)
+
 ## Build and run
 
 ### Run on Web version via Gradle
