@@ -16,15 +16,13 @@ kotlin {
         binaries.executable()
         browser {
             commonWebpackConfig {
-                // Kotlin Gradle Plugin 1.8.20 and newer are doing it for you
-//                devServer = (devServer ?: KotlinWebpackConfig.DevServer()).copy(
-//                    open = mapOf(
-//                        "app" to mapOf(
-//                            "name" to "google chrome", // "edge"
-//                            "arguments" to listOf("--js-flags=--experimental-wasm-gc")
-//                        )
-//                    ),
-//                )
+                devServer = (devServer ?: KotlinWebpackConfig.DevServer()).copy(
+                    open = mapOf(
+                        "app" to mapOf(
+                            "name" to "google chrome",
+                        )
+                    ),
+                )
             }
         }
     }
