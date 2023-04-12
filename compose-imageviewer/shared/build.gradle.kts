@@ -1,5 +1,6 @@
 @file:Suppress("OPT_IN_IS_NOT_ENABLED")
 
+import org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootExtension
 import org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpackConfig
 
 plugins {
@@ -129,3 +130,6 @@ android {
         targetCompatibility = JavaVersion.VERSION_11
     }
 }
+
+// Use a proper version of webpack, TODO remove after updating to Kotlin 1.9. 
+rootProject.the<NodeJsRootExtension>().versions.webpack.version = "5.76.2"
