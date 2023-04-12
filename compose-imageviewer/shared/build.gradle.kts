@@ -1,5 +1,7 @@
 @file:Suppress("OPT_IN_IS_NOT_ENABLED")
 
+import org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpackConfig
+
 plugins {
     kotlin("multiplatform")
 //    kotlin("native.cocoapods")
@@ -25,7 +27,17 @@ kotlin {
 
     wasm {
         moduleName = "imageviewer"
-        browser()
+        browser {
+            commonWebpackConfig {
+                devServer = (devServer ?: KotlinWebpackConfig.DevServer()).copy(
+                    open = mapOf(
+                        "app" to mapOf(
+                            "name" to "google chrome",
+                        )
+                    ),
+                )
+            }
+        }
         binaries.executable()
     }
 
