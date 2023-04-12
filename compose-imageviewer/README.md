@@ -29,7 +29,11 @@ Web version of an image gallery for remote server image viewing built with Compo
 `./gradlew :androidApp:installDebug`
 
 
-## Feedback & Questions
+# Feedback & Questions
 
 Give it a try, and share your feedback and ask questions in the Kotlin Slack [#compose-web](https://slack-chats.kotlinlang.org/c/compose-web) channel (if you’re not a member, [apply here](https://kotl.in/slack)) or in the twitter [@bashorov](https://twitter.com/bashorov).
 
+# Learn more
+
+* [Kotlin/Wasm](https://kotl.in/wasm/)
+* [Other examples](../#Examples)
