@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpackConfig
 
 plugins {
-    kotlin("multiplatform") version "1.8.20-Beta"
+    kotlin("multiplatform") version "1.8.20"
 }
 
 group = "me.user"
