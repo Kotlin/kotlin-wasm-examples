@@ -1,6 +1,7 @@
 # Compose for Web
 
-> Web support in Compose Multiplatform is Experimental and may be changed at any time. Use it only for evaluation purposes.
+> **Note**
+> Compose Multiplatform for Web is Experimental and may be changed at any time. Use it only for evaluation purposes.
 > We would appreciate your feedback on it in the public Slack channel [#compose-web](https://slack-chats.kotlinlang.org/c/compose-web).
 > If you face any issues, please report them on [GitHub](https://github.com/JetBrains/compose-multiplatform/issues).
 
@@ -14,19 +15,21 @@ Learn more about [Compose Multiplatform](https://github.com/JetBrains/compose-mu
 
 Web version of an image gallery for remote server image viewing built with Compose Multiplatform.
 
-![](screenshots/imageviewer-web.png)
+![](screenshots/imageviewer.png)
 
 ## Build and run
 
-### Run on Web version via Gradle
+Check out the repo, navigate to the project folder, and use the following commands:
+
+### Run Web version via Gradle
 
 `./gradlew :shared:wasmRun`
 
-### Run on Desktop version via Gradle
+### Run Desktop version via Gradle
 
 `./gradlew :desktopApp:run`
 
-### Running Android application
+### Install Android application via Gradle
 
 `./gradlew :androidApp:installDebug`
 
