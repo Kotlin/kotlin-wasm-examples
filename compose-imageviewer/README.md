@@ -1,15 +1,13 @@
-# Compose for Web
+# Compose Multiplatform for Web
 
 > **Note**
-> Compose Multiplatform for Web is Experimental and may be changed at any time. Use it only for evaluation purposes.
+> Web support is Experimental and may be changed at any time. Use it only for evaluation purposes.
 > We would appreciate your feedback on it in the public Slack channel [#compose-web](https://slack-chats.kotlinlang.org/c/compose-web).
 > If you face any issues, please report them on [GitHub](https://github.com/JetBrains/compose-multiplatform/issues).
 
 You can experiment with sharing your mobile or desktop UIs with the web. Compose for Web is based on [Kotlin/Wasm](https://kotl.in/wasm),
 the newest target for Kotlin Multiplatform projects. It allows Kotlin developers to run their code in the browser with
 all the benefits that WebAssembly has to offer, such as good and predictable performance for your applications.
-
-Learn more about [Compose Multiplatform](https://github.com/JetBrains/compose-multiplatform/#compose-multiplatform).
 
 # Image Viewer
 
@@ -54,5 +52,6 @@ Give it a try, and share your feedback and ask questions in the Kotlin Slack [#c
 
 # Learn more
 
+* [Compose Multiplatform](https://github.com/JetBrains/compose-multiplatform/#compose-multiplatform)
 * [Kotlin/Wasm](https://kotl.in/wasm/)
-* [Other examples](../#Examples)
+* [Other examples](../../../#examples)

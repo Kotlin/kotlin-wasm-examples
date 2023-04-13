@@ -20,4 +20,4 @@ Give it a try, and share your feedback and ask questions in the Kotlin Slack [#w
 # Learn more
 
 * [Kotlin/Wasm](https://kotl.in/wasm/)
-* [Other examples](../#Examples)
+* [Other examples](../../../#examples)

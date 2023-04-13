@@ -9,9 +9,9 @@ To know more about Kotlin wasm, please visit https://kotl.in/wasm.
 
 ## Examples
 
-* [Compose Image Viewer](compose-imageviewer) — Web version of Image Viewer application built with Compose Multiplatform
-* [Browser Example](browser-example) -- A simple app showing "Hello World" in the browser using DOM API. 
-* [Node.js Example](nodejs-example) -- A simple app printing "Hello World" in the Node.js.
+* [Compose Image Viewer](compose-imageviewer#compose-multiplatform-for-web) — Web version of Image Viewer application built with Compose Multiplatform
+* [Browser Example](browser-example#kotlinwasm-browser-example) -- A simple app showing "Hello World" in the browser using DOM API. 
+* [Node.js Example](nodejs-example#kotlinwasm-nodejs-example) -- A simple app printing "Hello World" in the Node.js.
 * [KoWasm](https://github.com/kowasm/kowasm) -- Server-side and full stack development with Kotlin and WebAssembly leveraging WASI and Component Model.
 
 ## Build and run
