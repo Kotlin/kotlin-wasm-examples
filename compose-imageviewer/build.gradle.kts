@@ -27,7 +27,7 @@ allprojects {
             val isComposeGroup = requested.module.group.startsWith("org.jetbrains.compose")
             val isComposeCompiler = requested.module.group.startsWith("org.jetbrains.compose.compiler")
             if (isComposeGroup && !isComposeCompiler && !isWasm && !isJs) {
-                useVersion("1.3.1")
+                useVersion("1.4.0")
             }
         }
     }
