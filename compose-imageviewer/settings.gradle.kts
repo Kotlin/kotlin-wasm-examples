@@ -27,3 +27,4 @@ rootProject.name = "imageviewer"
 include(":androidApp")
 include(":shared")
 include(":desktopApp")
+include(":webApp")
