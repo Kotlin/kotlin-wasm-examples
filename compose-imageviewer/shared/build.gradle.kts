@@ -21,25 +21,11 @@ kotlin {
 //    iosSimulatorArm64()
 
     js(IR) {
-        moduleName = "imageviewer"
         browser()
-        binaries.executable()
     }
 
     wasm {
-        moduleName = "imageviewer"
-        browser {
-            commonWebpackConfig {
-                devServer = (devServer ?: KotlinWebpackConfig.DevServer()).copy(
-                    open = mapOf(
-                        "app" to mapOf(
-                            "name" to "google chrome",
-                        )
-                    ),
-                )
-            }
-        }
-        binaries.executable()
+        browser()
     }
 
 //    cocoapods {
@@ -111,10 +97,6 @@ kotlin {
     }
 }
 
-compose.experimental {
-    web.application {}
-}
-
 android {
     compileSdk = 33
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
@@ -131,5 +113,5 @@ android {
     }
 }
 
-// Use a proper version of webpack, TODO remove after updating to Kotlin 1.9. 
+// Use a proper version of webpack, TODO remove after updating to Kotlin 1.9.
 rootProject.the<NodeJsRootExtension>().versions.webpack.version = "5.76.2"
