@@ -44,7 +44,7 @@ For more information see https://kotl.in/wasm_help/.
 
 ## IDE
 
-We recommend using [IntelliJ IDEA 2023.1 or newer](https://www.jetbrains.com/idea/ to work with the project.
+We recommend using [IntelliJ IDEA 2023.1 or newer](https://www.jetbrains.com/idea/) to work with the project.
 
 # Feedback & Questions
 
