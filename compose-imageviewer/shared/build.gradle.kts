@@ -62,6 +62,7 @@ kotlin {
             dependsOn(jsWasmMain)
             dependencies {
                 implementation("io.ktor:ktor-client-core:$ktorVersion")
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-js:1.7.0-RC")
             }
         }
 
