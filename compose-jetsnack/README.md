@@ -42,11 +42,11 @@ To set up the environment to run WebAssembly, you only need to enable an experim
 
 **Chrome**:
 
-* For version 109:
+For version 109:
 
-  Run the application with the `--js-flags=--experimental-wasm-gc` command line argument.
+  1. Run the application with the `--js-flags=--experimental-wasm-gc` command line argument.
 
-* For version 110 or later:
+For version 110 or later:
 
   1. Go to `chrome://flags/#enable-webassembly-garbage-collection` in your browser.
   2. Enable **WebAssembly Garbage Collection**.
@@ -64,7 +64,7 @@ For version 112 or later:
 
 For version 109 or later:
 
-Run the application with the `--js-flags=--experimental-wasm-gc` command line argument.
+1. Run the application with the `--js-flags=--experimental-wasm-gc` command line argument.
 
 For more information see https://kotl.in/wasm_help/.
 
