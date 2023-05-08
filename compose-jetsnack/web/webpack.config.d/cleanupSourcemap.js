@@ -8,18 +8,20 @@ const mapFile = outDir + "jetsnackwasmapp.map"
 const sourcemap = JSON.parse(fs.readFileSync(mapFile))
 const sources = sourcemap["sources"]
 srcLoop: for (let i in sources) {
-    const srcFilePath = sources[i]
+    const srcFilePath = sources[i];
+    if (srcFilePath == null) continue;
+
     const srcFileCandidates = [
         outDir + srcFilePath,
         outDir + srcFilePath.substring("../".length),
         outDir +  "../" + srcFilePath,
-    ]
-    
+    ];
+
     for (let srcFile of srcFileCandidates) {
         if (fs.existsSync(srcFile)) continue srcLoop;
     }
-    
-    sources[i] = null
+
+    sources[i] = null;
 }
 
 fs.writeFileSync(mapFile, JSON.stringify(sourcemap))
