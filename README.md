@@ -2,7 +2,7 @@
 
 # Kotlin/Wasm Examples
 
-This repository contains a collection of examples demonstrating how to use [Kotlin/Wasm](kotl.in/wasm). 
+This repository contains a collection of examples demonstrating how to use [Kotlin/Wasm](https://kotl.in/wasm). 
 Each example includes the source code and a README.md file explaining how to build and run the example.
 
 To know more about Kotlin wasm, please visit https://kotl.in/wasm.
