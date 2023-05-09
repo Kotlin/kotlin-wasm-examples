@@ -14,8 +14,11 @@ Web version of [Jetsnack application](https://github.com/android/compose-samples
 > If you face any issues, please report them on [YouTrack](https://youtrack.jetbrains.com/issue/KT-56492).
 
 Kotlin/Wasm is a new experimental target that enables developers to compile Kotlin code to WebAssembly (Wasm).
-It is designed to offer faster compilation speeds, improved interoperability with JavaScript, and better integration with browsers.
-Wasm's compact and easy-to-parse bytecode potentially leads to faster application startup times, and its statically typed nature can improve application runtime performance.
+It is designed to offer:
+
+* Faster compilation speeds than the deprecated `wasm32` Kotlin/Native target since Kotlin/Wasm doesn't rely on LLVM.
+* Improved interoperability with JavaScript and better integration with browsers, thanks to the [Wasm garbage collection](https://github.com/WebAssembly/gc) feature.
+* Potentially faster application startup compared to Kotlin/JS and JavaScript because Wasm has a compact and easy-to-parse bytecode.
 
 ## Compose Multiplatform for Web
 
@@ -34,11 +37,11 @@ It allows you to run your code in the browser with all the benefits that WebAsse
 We recommend using [IntelliJ IDEA 2023.1 or later](https://www.jetbrains.com/idea/) to work with the project.
 It has Kotlin/Wasm support out of the box.
 
-### Browser
+### Browser (for Kotlin/Wasm target)
 
 Almost all modern browsers already support WebAssembly 1.0.
 
-To set up the environment to run WebAssembly, you only need to enable an experimental [garbage collection feature](https://github.com/WebAssembly/gc):
+To run applications built with Kotlin/Wasm in a browser, you need to enable an experimental [garbage collection feature](https://github.com/WebAssembly/gc):
 
 **Chrome**:
 
