@@ -14,11 +14,9 @@ Web version of [Jetsnack application](https://github.com/android/compose-samples
 > If you face any issues, please report them on [YouTrack](https://youtrack.jetbrains.com/issue/KT-56492).
 
 Kotlin/Wasm is a new experimental target that enables developers to compile Kotlin code to WebAssembly (Wasm).
-It is designed to offer:
 
-* Faster compilation speeds than the deprecated `wasm32` Kotlin/Native target since Kotlin/Wasm doesn't rely on LLVM.
-* Improved interoperability with JavaScript and better integration with browsers, thanks to the [Wasm garbage collection](https://github.com/WebAssembly/gc) feature.
-* Potentially faster application startup compared to Kotlin/JS and JavaScript because Wasm has a compact and easy-to-parse bytecode.
+By compiling Kotlin code to WebAssembly, you can run it on any WebAssembly-compatible environment that meets Kotlin's requirements, including web browsers.
+This creates numerous opportunities, such as developing high-performance web applications and serverless functions.
 
 ## Compose Multiplatform for Web
 
