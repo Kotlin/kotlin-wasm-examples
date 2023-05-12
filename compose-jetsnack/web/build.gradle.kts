@@ -33,6 +33,7 @@ kotlin {
             }
         }
         binaries.executable()
+//        applyBinaryen()
     }
     sourceSets {
         val commonMain by getting {
