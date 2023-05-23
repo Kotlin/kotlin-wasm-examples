@@ -63,6 +63,27 @@
 
 <script src="kotlin-wasm-browser-example.js"></script>
 
+<!-- Access from JS after webpack !-->
+<script type="application/javascript">
+    Promise.resolve(globalThis["kotlin-wasm-browser-example"]).then(myModule =>
+        console.log(myModule.default.add(3, 4))
+    )
+</script>
+
+<!-- Access from JS if we distribute kotlin-wasm-browser-example-wasm.mjs & co -->
+<!-- Same code could be written in JS file-->
+
+<script type="module" >
+    const myModule = (await import("./kotlin-wasm-browser-example-wasm.mjs")).default;
+    console.log(myModule.add(100, 2));
+    const { foo } = (await import("./kotlin-wasm-browser-example-wasm.mjs")).default;
+    console.log(myModule.add(101, 2));
+</script>
+
+<!-- Access from JS with ES Module if we distribute kotlin-wasm-browser-example-wasm.mjs & co -->
+
+<script type="module" src="./fromES6.js" > </script>
+
 <div id="warning">
     ⚠️ This page using <b>experimental Kotlin/Wasm</b> which requires enabling experimental features in your browser.
     <ul>

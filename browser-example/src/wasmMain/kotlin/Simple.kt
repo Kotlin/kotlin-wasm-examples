@@ -8,3 +8,6 @@ fun main() {
 }
 
 fun greet() = "world"
+
+@JsExport
+fun add(a: Int, b: Int) = a + b
