@@ -56,5 +56,8 @@ compose.experimental {
     web.application {}
 }
 
-// Use a proper version of webpack, TODO remove after updating to Kotlin 1.9. 
-rootProject.the<NodeJsRootExtension>().versions.webpack.version = "5.76.2"
+compose {
+    // 1.4.0-dev-wasm08
+    kotlinCompilerPlugin.set("1.4.0-dev-wasm08")
+    kotlinCompilerPluginArgs.add("suppressKotlinVersionCompatibilityCheck=1.9.0-Beta")
+}

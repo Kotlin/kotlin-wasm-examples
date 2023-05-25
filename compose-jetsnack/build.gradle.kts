@@ -19,6 +19,9 @@ allprojects {
             if (isComposeGroup && !isComposeCompiler && !isWasm && !isJs) {
                 useVersion("1.4.0")
             }
+            if (requested.module.name.startsWith("kotlin-stdlib")) {
+                useVersion("1.9.0-Beta")
+            }
         }
     }
 }

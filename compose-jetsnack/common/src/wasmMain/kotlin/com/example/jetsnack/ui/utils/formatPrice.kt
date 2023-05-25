@@ -2,12 +2,12 @@ package com.example.jetsnack.ui.utils
 
 
 private external object Intl {
-    class NumberFormat(locales: String, options: Dynamic) {
+    class NumberFormat(locales: String, options: JsAny) {
         fun format(l: Double): String
     }
 }
 
-private fun formatAsUSD() = js("({ style: 'currency', currency: 'USD',})")
+private fun formatAsUSD(): JsAny = js("({ style: 'currency', currency: 'USD',})")
 
 private val formatter = Intl.NumberFormat("en-US", formatAsUSD())
 

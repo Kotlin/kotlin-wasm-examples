@@ -8,6 +8,8 @@ import kotlin.coroutines.resumeWithException
 import kotlin.coroutines.suspendCoroutine
 import kotlin.wasm.unsafe.UnsafeWasmMemoryApi
 import kotlin.wasm.unsafe.withScopedMemoryAllocator
+import kotlin.js.toJsString
+import org.w3c.xhr.XMLHttpRequestResponseType
 
 private class MissingResourceException(url: String): Exception("GET $url failed")
 
@@ -15,7 +17,7 @@ internal suspend fun loadResource(url: String): ArrayBuffer {
     return suspendCoroutine { continuation ->
         val req = XMLHttpRequest()
         req.open("GET", url, true)
-        req.responseType = "arraybuffer".asDynamic().unsafeCast()
+        req.responseType = "arraybuffer".toJsString().unsafeCast<XMLHttpRequestResponseType>()
 
         req.onload = { _ ->
             val arrayBuffer = req.response

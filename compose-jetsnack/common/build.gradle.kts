@@ -54,11 +54,11 @@ kotlin {
                 implementation(libs.androidx.lifecycle.runtime.compose)
             }
         }
-        val androidTest by getting {
-            dependencies {
-                implementation("junit:junit:4.13.2")
-            }
-        }
+//        val androidTest by getting {
+//            dependencies {
+//                implementation("junit:junit:4.13.2")
+//            }
+//        }
         val desktopMain by getting {
             dependsOn(nonAndroidMain)
             dependencies {
@@ -75,6 +75,12 @@ kotlin {
 
 compose.experimental {
     web.application {}
+}
+
+compose {
+    // 1.4.0-dev-wasm08
+    kotlinCompilerPlugin.set("1.4.0-dev-wasm08")
+    kotlinCompilerPluginArgs.add("suppressKotlinVersionCompatibilityCheck=1.9.0-Beta")
 }
 
 android {
