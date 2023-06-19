@@ -2,7 +2,7 @@ import org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootExtension
 import org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpackConfig
 
 plugins {
-    kotlin("multiplatform") version "1.8.20"
+    kotlin("multiplatform") version "1.9.0-Beta"
 }
 
 group = "me.user"
@@ -38,6 +38,3 @@ kotlin {
         val wasmTest by getting
     }
 }
-
-// Use a proper version of webpack, TODO remove after updating to Kotlin 1.9. 
-rootProject.the<NodeJsRootExtension>().versions.webpack.version = "5.76.2"
