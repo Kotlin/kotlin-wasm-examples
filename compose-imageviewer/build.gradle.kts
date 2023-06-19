@@ -27,7 +27,12 @@ allprojects {
             val isComposeGroup = requested.module.group.startsWith("org.jetbrains.compose")
             val isComposeCompiler = requested.module.group.startsWith("org.jetbrains.compose.compiler")
             if (isComposeGroup && !isComposeCompiler && !isWasm && !isJs) {
-                useVersion("1.4.0")
+                val composeVersion = project.property("compose.version") as String
+                useVersion(composeVersion)
+            }
+            if (requested.module.name.startsWith("kotlin-stdlib")) {
+                val kotlinVersion = project.property("kotlin.version") as String
+                useVersion(kotlinVersion)
             }
         }
     }

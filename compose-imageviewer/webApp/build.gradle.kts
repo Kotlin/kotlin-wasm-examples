@@ -1,3 +1,4 @@
+import org.jetbrains.kotlin.gradle.dsl.KotlinJsCompile
 import org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpackConfig
 
 plugins {
@@ -66,4 +67,11 @@ kotlin {
 
 compose.experimental {
     web.application {}
+}
+
+compose {
+    val composeVersion = project.property("compose.wasm.version") as String
+    kotlinCompilerPlugin.set(composeVersion)
+    val kotlinVersion = project.property("kotlin.version") as String
+    kotlinCompilerPluginArgs.add("suppressKotlinVersionCompatibilityCheck=$kotlinVersion")
 }
