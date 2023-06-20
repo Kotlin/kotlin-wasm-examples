@@ -3,7 +3,7 @@ import org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootPlugin
 import org.jetbrains.kotlin.gradle.targets.js.npm.tasks.KotlinNpmInstallTask
 
 plugins {
-    kotlin("multiplatform") version "1.9.0-Beta"
+    kotlin("multiplatform") version "1.9.0-RC"
 }
 
 repositories {
