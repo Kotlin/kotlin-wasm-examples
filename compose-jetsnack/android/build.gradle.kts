@@ -35,3 +35,8 @@ android {
         }
     }
 }
+
+compose {
+    val composeVersion = project.property("compose.wasm.version") as String
+    kotlinCompilerPlugin.set(composeVersion)
+}

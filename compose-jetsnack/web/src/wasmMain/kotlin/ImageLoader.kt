@@ -15,7 +15,7 @@ internal suspend fun loadResource(url: String): ArrayBuffer {
     return suspendCoroutine { continuation ->
         val req = XMLHttpRequest()
         req.open("GET", url, true)
-        req.responseType = "arraybuffer".asDynamic().unsafeCast()
+        req.responseType = "arraybuffer".toJsString().unsafeCast()
 
         req.onload = { _ ->
             val arrayBuffer = req.response
