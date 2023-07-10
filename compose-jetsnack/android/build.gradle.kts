@@ -35,9 +35,3 @@ android {
         }
     }
 }
-
-compose {
-    // 1.4.0-dev-wasm08
-    kotlinCompilerPlugin.set("1.4.0-dev-wasm08")
-    kotlinCompilerPluginArgs.add("suppressKotlinVersionCompatibilityCheck=1.9.0-Beta")
-}
