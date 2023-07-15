@@ -10,6 +10,7 @@ plugins {
 group = "com.example"
 version = "1.0-SNAPSHOT"
 
+@OptIn(org.jetbrains.compose.ExperimentalComposeLibrary::class)
 kotlin {
     wasm {
         moduleName = "jetsnackwasmapp"
@@ -41,6 +42,7 @@ kotlin {
                 api(compose.runtime)
                 api(compose.foundation)
                 api(compose.material)
+                api(compose.components.resources)
                 implementation(project(":common"))
             }
         }
