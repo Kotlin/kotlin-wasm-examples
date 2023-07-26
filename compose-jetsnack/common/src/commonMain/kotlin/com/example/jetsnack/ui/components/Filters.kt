@@ -65,15 +65,15 @@ fun FilterBar(
     ) {
         item {
             IconButton(onClick = onShowFilters) {
-                Icon(
-                    imageVector = Icons.Rounded.FilterList,
-                    tint = JetsnackTheme.colors.brand,
-                    contentDescription = stringResource(MppR.string.label_filters),
-                    modifier = Modifier.diagonalGradientBorder(
-                        colors = JetsnackTheme.colors.interactiveSecondary,
-                        shape = CircleShape
-                    )
-                )
+//                Icon(
+//                    imageVector = Icons.Rounded.FilterList,
+//                    tint = JetsnackTheme.colors.brand,
+//                    contentDescription = stringResource(MppR.string.label_filters),
+//                    modifier = Modifier.diagonalGradientBorder(
+//                        colors = JetsnackTheme.colors.interactiveSecondary,
+//                        shape = CircleShape
+//                    )
+//                )
             }
         }
         items(filters) { filter ->

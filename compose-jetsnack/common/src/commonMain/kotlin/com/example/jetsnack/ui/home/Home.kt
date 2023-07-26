@@ -141,11 +141,11 @@ fun JetsnackBottomBar(
 
                 JetsnackBottomNavigationItem(
                     icon = {
-                        Icon(
-                            imageVector = section.icon,
-                            tint = tint,
-                            contentDescription = text
-                        )
+//                        Icon(
+//                            imageVector = section.icon,
+//                            tint = tint,
+//                            contentDescription = text
+//                        )
                     },
                     text = {
                         Text(

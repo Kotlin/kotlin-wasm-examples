@@ -62,11 +62,11 @@ fun DestinationBar(modifier: Modifier = Modifier) {
                 onClick = { /* todo */ },
                 modifier = Modifier.align(Alignment.CenterVertically)
             ) {
-                Icon(
-                    imageVector = Icons.Outlined.ExpandMore,
-                    tint = JetsnackTheme.colors.brand,
-                    contentDescription = stringResource(MppR.string.label_select_delivery)
-                )
+//                Icon(
+//                    imageVector = Icons.Outlined.ExpandMore,
+//                    tint = JetsnackTheme.colors.brand,
+//                    contentDescription = stringResource(MppR.string.label_select_delivery)
+//                )
             }
         }
         JetsnackDivider()

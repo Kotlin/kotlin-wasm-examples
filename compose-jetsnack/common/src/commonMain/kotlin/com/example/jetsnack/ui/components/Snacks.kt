@@ -97,14 +97,14 @@ fun SnackCollection(
                 onClick = { /* todo */ },
                 modifier = Modifier.align(Alignment.CenterVertically)
             ) {
-                Icon(
-                    imageVector = mirroringIcon(
-                        ltrIcon = Icons.Outlined.ArrowForward,
-                        rtlIcon = Icons.Outlined.ArrowBack
-                    ),
-                    tint = JetsnackTheme.colors.brand,
-                    contentDescription = null
-                )
+//                Icon(
+//                    imageVector = mirroringIcon(
+//                        ltrIcon = Icons.Outlined.ArrowForward,
+//                        rtlIcon = Icons.Outlined.ArrowBack
+//                    ),
+//                    tint = JetsnackTheme.colors.brand,
+//                    contentDescription = null
+//                )
             }
         }
         if (highlight && snackCollection.type == CollectionType.Highlight) {
@@ -284,6 +284,7 @@ fun SnackImage(
     }
 }
 
+@Composable
 expect fun SnackAsyncImage(
     imageUrl: String,
     contentDescription: String?,
