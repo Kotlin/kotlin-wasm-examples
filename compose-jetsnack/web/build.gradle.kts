@@ -57,7 +57,7 @@ compose.experimental {
 }
 
 compose {
-    val composeVersion = project.property("compose.wasm.version") as String
+    val composeVersion = project.property("compose.wasm.compilerVersion") as String
     kotlinCompilerPlugin.set(composeVersion)
     val kotlinVersion = project.property("kotlin.version") as String
     kotlinCompilerPluginArgs.add("suppressKotlinVersionCompatibilityCheck=$kotlinVersion")
