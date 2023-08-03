@@ -24,7 +24,11 @@ afterEvaluate {
 kotlin {
     js(IR) {
         moduleName = "imageviewer"
-        browser()
+        browser {
+            commonWebpackConfig {
+                outputFileName = "imageviewer.js"
+            }
+        }
         binaries.executable()
     }
 
@@ -66,6 +70,10 @@ kotlin {
         }
         val jsMain by getting {
             dependsOn(jsWasmMain)
+            dependencies {
+                implementation("io.ktor:ktor-client-core:2.3.3")
+                implementation("io.ktor:ktor-client-js:2.3.3")
+            }
         }
         val wasmMain by getting {
             dependsOn(jsWasmMain)
