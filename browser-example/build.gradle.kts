@@ -30,6 +30,9 @@ kotlin {
                     },
                 )
             }
+
+            // Uncomment the next line to apply Binaryen and get optimized wasm binaries
+            // applyBinaryen()
         }
     }
     sourceSets {
