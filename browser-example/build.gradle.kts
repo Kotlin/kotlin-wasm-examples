@@ -2,7 +2,7 @@ import org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootExtension
 import org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpackConfig
 
 plugins {
-    kotlin("multiplatform") version "1.9.0"
+    kotlin("multiplatform") version "1.9.20-Beta-205"
 }
 
 group = "me.user"
@@ -10,6 +10,7 @@ version = "1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
+    maven("https://maven.pkg.jetbrains.space/kotlin/p/kotlin/dev")
 }
 
 kotlin {
