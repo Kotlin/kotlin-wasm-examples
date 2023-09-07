@@ -9,9 +9,15 @@ A simple app using WASI API in the Node.js.
 
 Check out the repo, navigate to the project folder, and use the following command:
 
-### Run via Gradle
+### Run tests via Gradle with NodeJs
 
-`./gradlew wasmWasiTest`
+`./gradlew wasmWasiNodeTest`
+
+### Run tests via Gradle with Deno
+
+`./gradlew wasmWasiDenoTest`
+
+(for Windows platform deno.exe expected to be installed)
 
 # Feedback & Questions
 
