@@ -67,7 +67,7 @@ kotlin {
         }
         val desktopTest by getting
 
-        val wasmMain by getting {
+        val wasmJsMain by getting {
             dependsOn(nonAndroidMain)
         }
     }
@@ -78,11 +78,11 @@ compose.experimental {
 }
 
 android {
-    compileSdkVersion(33)
+    compileSdk = 34
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
     defaultConfig {
-        minSdkVersion(24)
-        targetSdkVersion(33)
+        minSdk = 24
+        targetSdk = 33
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -91,8 +91,8 @@ android {
 }
 
 compose {
-    val composeVersion = project.property("compose.wasm.version") as String
-    kotlinCompilerPlugin.set(composeVersion)
-    val kotlinVersion = project.property("kotlin.version") as String
-    kotlinCompilerPluginArgs.add("suppressKotlinVersionCompatibilityCheck=$kotlinVersion")
+//    val composeVersion = project.property("compose.wasm.version") as String
+//    kotlinCompilerPlugin.set(composeVersion)
+//    val kotlinVersion = project.property("kotlin.version") as String
+//    kotlinCompilerPluginArgs.add("suppressKotlinVersionCompatibilityCheck=$kotlinVersion")
 }

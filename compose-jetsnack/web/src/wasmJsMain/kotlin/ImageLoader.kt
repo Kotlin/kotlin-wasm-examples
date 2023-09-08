@@ -1,5 +1,3 @@
-package com.example.jetsnack.ui.components
-
 import org.jetbrains.skia.ExternalSymbolName
 import org.jetbrains.skia.impl.NativePointer
 import org.khronos.webgl.ArrayBuffer
@@ -13,7 +11,7 @@ import kotlin.wasm.unsafe.withScopedMemoryAllocator
 
 private class MissingResourceException(url: String): Exception("GET $url failed")
 
-internal suspend fun loadImage(url: String): ArrayBuffer {
+internal suspend fun loadResource(url: String): ArrayBuffer {
     return suspendCoroutine { continuation ->
         val req = XMLHttpRequest()
         req.open("GET", url, true)
@@ -28,7 +26,7 @@ internal suspend fun loadImage(url: String): ArrayBuffer {
             }
             null
         }
-        req.send(null)
+        req.send("")
     }
 }
 
