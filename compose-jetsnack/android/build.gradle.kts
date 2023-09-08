@@ -17,11 +17,11 @@ dependencies {
 }
 
 android {
-    compileSdkVersion(33)
+    compileSdk = 34
     defaultConfig {
         applicationId = "com.example.android"
-        minSdkVersion(24)
-        targetSdkVersion(33)
+        minSdk = 24
+        targetSdk = 33
         versionCode = 1
         versionName = "1.0-SNAPSHOT"
     }
@@ -37,6 +37,6 @@ android {
 }
 
 compose {
-    val composeVersion = project.property("compose.wasm.version") as String
-    kotlinCompilerPlugin.set(composeVersion)
+//    val composeVersion = project.property("compose.wasm.version") as String
+//    kotlinCompilerPlugin.set(composeVersion)
 }

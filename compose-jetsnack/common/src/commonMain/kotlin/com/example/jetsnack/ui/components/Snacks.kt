@@ -284,6 +284,7 @@ fun SnackImage(
     }
 }
 
+@Composable
 expect fun SnackAsyncImage(
     imageUrl: String,
     contentDescription: String?,
