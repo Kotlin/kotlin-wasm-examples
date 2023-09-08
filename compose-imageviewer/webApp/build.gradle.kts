@@ -13,12 +13,12 @@ val copyJsResources = tasks.create("copyJsResourcesWorkaround", Copy::class.java
 
 val copyWasmResources = tasks.create("copyWasmResourcesWorkaround", Copy::class.java) {
     from(project(":shared").file("src/commonMain/resources"))
-    into("build/processedResources/wasm/main")
+    into("build/processedResources/wasmJs/main")
 }
 
 afterEvaluate {
     project.tasks.getByName("jsProcessResources").finalizedBy(copyJsResources)
-    project.tasks.getByName("wasmProcessResources").finalizedBy(copyWasmResources)
+    project.tasks.getByName("wasmJsProcessResources").finalizedBy(copyWasmResources)
 }
 
 kotlin {
@@ -75,7 +75,7 @@ kotlin {
                 implementation("io.ktor:ktor-client-js:2.3.3")
             }
         }
-        val wasmMain by getting {
+        val wasmJsMain by getting {
             dependsOn(jsWasmMain)
         }
     }
@@ -86,8 +86,16 @@ compose.experimental {
 }
 
 compose {
-    val composeVersion = project.property("compose.wasm.version") as String
-    kotlinCompilerPlugin.set(composeVersion)
-    val kotlinVersion = project.property("kotlin.version") as String
-    kotlinCompilerPluginArgs.add("suppressKotlinVersionCompatibilityCheck=$kotlinVersion")
+//    val composeVersion = project.property("compose.wasm.version") as String
+//    kotlinCompilerPlugin.set(composeVersion)
+//    val kotlinVersion = project.property("kotlin.version") as String
+//    kotlinCompilerPluginArgs.add("suppressKotlinVersionCompatibilityCheck=$kotlinVersion")
+}
+
+
+project.tasks.getByName("wasmJsDevelopmentExecutableCompileSync").doLast {
+    val f = project.buildDir.resolve("../../build/js/packages/imageviewer/kotlin/imageviewer.uninstantiated.mjs")
+        .normalize()
+    val t = f.readText().replace("'skia': imports['skia'] ?? await import('skia'),", "'skia': imports['skia'],")
+    f.writeText(t)
 }

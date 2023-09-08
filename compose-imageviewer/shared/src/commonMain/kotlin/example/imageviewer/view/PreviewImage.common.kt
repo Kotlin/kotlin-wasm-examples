@@ -1,11 +1,8 @@
 package example.imageviewer.view
 
-import androidx.compose.animation.AnimatedContent
-import androidx.compose.animation.AnimatedContentScope
-import androidx.compose.animation.ExperimentalAnimationApi
+import androidx.compose.animation.*
 import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.tween
-import androidx.compose.animation.with
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -54,10 +51,10 @@ internal fun PreviewImage(
                 targetState = picture,
                 transitionSpec = {
                     slideIntoContainer(
-                        towards = AnimatedContentScope.SlideDirection.Left,
+                        towards = AnimatedContentTransitionScope.SlideDirection.Left,
                         animationSpec = tween(durationMillis = 500, easing = FastOutSlowInEasing)
                     ) with slideOutOfContainer(
-                        towards = AnimatedContentScope.SlideDirection.Left,
+                        towards = AnimatedContentTransitionScope.SlideDirection.Left,
                         animationSpec = tween(durationMillis = 500, easing = FastOutSlowInEasing)
                     )
                 }
