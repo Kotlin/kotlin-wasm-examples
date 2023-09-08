@@ -1,9 +1,5 @@
 @file:Suppress("OPT_IN_IS_NOT_ENABLED")
 
-import org.jetbrains.kotlin.gradle.dsl.KotlinJsCompile
-import org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootExtension
-import org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpackConfig
-
 plugins {
     kotlin("multiplatform")
 //    kotlin("native.cocoapods")
@@ -66,7 +62,7 @@ kotlin {
             }
         }
 
-        val wasmMain by getting {
+        val wasmJsMain by getting {
             dependsOn(jsWasmMain)
         }
 
@@ -99,7 +95,7 @@ kotlin {
 }
 
 android {
-    compileSdk = 33
+    compileSdk = 34
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
     sourceSets["main"].res.srcDirs("src/androidMain/res")
     sourceSets["main"].resources.srcDirs("src/commonMain/resources")
@@ -115,8 +111,8 @@ android {
 }
 
 compose {
-    val composeVersion = project.property("compose.wasm.version") as String
-    kotlinCompilerPlugin.set(composeVersion)
-    val kotlinVersion = project.property("kotlin.version") as String
-    kotlinCompilerPluginArgs.add("suppressKotlinVersionCompatibilityCheck=$kotlinVersion")
+//    val composeVersion = project.property("compose.wasm.version") as String
+//    kotlinCompilerPlugin.set(composeVersion)
+//    val kotlinVersion = project.property("kotlin.version") as String
+//    kotlinCompilerPluginArgs.add("suppressKotlinVersionCompatibilityCheck=$kotlinVersion")
 }
