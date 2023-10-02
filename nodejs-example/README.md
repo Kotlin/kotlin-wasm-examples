@@ -11,7 +11,7 @@ Check out the repo, navigate to the project folder, and use the following comman
 
 ### Run via Gradle
 
-`./gradlew wasmNodeRun`
+`./gradlew wasmJsNodeRun`
 
 # Feedback & Questions
 
