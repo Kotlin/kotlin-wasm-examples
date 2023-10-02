@@ -75,7 +75,7 @@ Check out the repository, navigate to the project folder, and use the following 
 
 ### Run Web version via Gradle
 
-Run the following Gradle command in the terminal: `./gradlew :web:wasmRun`
+Run the following Gradle command in the terminal: `./gradlew :web:wasmJsRun`
 
 Once the application starts, open the following URL in your browser: `http://localhost:8080`
 
