@@ -21,7 +21,7 @@ Check out the repo, navigate to the project folder, and use the following comman
 
 ### Run Web version via Gradle
 
-`./gradlew :webApp:wasmRun`
+`./gradlew :webApp:wasmJsRun`
 
 ### Run Desktop version via Gradle
 
