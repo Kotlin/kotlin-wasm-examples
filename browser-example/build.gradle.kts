@@ -2,7 +2,7 @@ import org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootExtension
 import org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpackConfig
 
 plugins {
-    kotlin("multiplatform") version "1.9.0"
+    kotlin("multiplatform") version "1.9.20-Beta2"
 }
 
 group = "me.user"
@@ -20,8 +20,7 @@ kotlin {
                 devServer = (devServer ?: KotlinWebpackConfig.DevServer()).copy(
 //                    open = mapOf(
 //                        "app" to mapOf(
-//                            "name" to "google chrome",
-//                            "arguments" to listOf("--js-flags=--experimental-wasm-gc ")
+//                            "name" to "google chrome"
 //                        )
 //                    ),
                     static = (devServer?.static ?: mutableListOf()).apply {
@@ -42,7 +41,7 @@ kotlin {
                 implementation(kotlin("test"))
             }
         }
-        val wasmMain by getting
-        val wasmTest by getting
+        val wasmJsMain by getting
+        val wasmJsTest by getting
     }
 }

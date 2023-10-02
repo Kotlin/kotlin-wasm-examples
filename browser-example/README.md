@@ -6,7 +6,7 @@ A simple app showing "Hello World" in the browser using DOM API.
 
 Check out the repo, navigate to the project folder, and use the following command:
 ```
-./gradlew wasmBrowserRun -t
+./gradlew wasmJsBrowserRun -t
 ```
 
 ## Setup Environment
