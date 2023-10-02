@@ -5,7 +5,7 @@ import org.jetbrains.kotlin.gradle.targets.js.testing.KotlinJsTest
 import org.jetbrains.kotlin.gradle.testing.internal.KotlinTestReport
 
 plugins {
-    kotlin("multiplatform") version "1.9.20-Beta"
+    kotlin("multiplatform") version "1.9.20-Beta2"
 }
 
 repositories {
@@ -47,12 +47,12 @@ val unzipDeno = run {
         OsType(OsName.MAC, OsArch.ARM64) -> "aarch64-apple-darwin"
         else -> return@run null
     }
-    val jsShellLocation = "$denoDirectory/deno-$denoSuffix.zip"
+    val denoLocation = "$denoDirectory/deno-$denoSuffix.zip"
 
     val downloadedTools = File(buildDir, "tools")
 
     val downloadDeno = tasks.register("denoDownload", Download::class) {
-        src(jsShellLocation)
+        src(denoLocation)
         dest(File(downloadedTools, "deno-$denoSuffix.zip"))
         overwrite(false)
     }
@@ -159,7 +159,8 @@ kotlin {
 }
 
 rootProject.the<NodeJsRootExtension>().apply {
-    nodeVersion = "20.2.0"
+    nodeVersion = "21.0.0-v8-canary202309143a48826a08"
+    nodeDownloadBaseUrl = "https://nodejs.org/download/v8-canary"
 }
 
 tasks.withType<KotlinJsTest>().all {
