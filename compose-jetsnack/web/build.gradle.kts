@@ -18,8 +18,7 @@ kotlin {
                 devServer = (devServer ?: KotlinWebpackConfig.DevServer()).copy(
 //                    open = mapOf(
 //                        "app" to mapOf(
-//                            "name" to "google chrome canary",
-//                            "arguments" to listOf("--js-flags=--experimental-wasm-gc ")
+//                            "name" to "google chrome canary"
 //                        )
 //                    ),
                     static = (devServer?.static ?: mutableListOf()).apply {
