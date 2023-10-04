@@ -11,7 +11,8 @@ import androidx.compose.ui.window.CanvasBasedWindow
 import com.example.jetsnack.JetSnackAppEntryPoint
 import com.example.jetsnack.ui.theme.Karla
 import com.example.jetsnack.ui.theme.Montserrat
-import kotlinx.coroutines.*
+import org.jetbrains.compose.resources.ExperimentalResourceApi
+import org.jetbrains.compose.resources.resource
 
 @OptIn(ExperimentalComposeUiApi::class)
 fun main() {
@@ -35,10 +36,10 @@ fun main() {
 
 
 private suspend fun loadMontserratFont() {
-    val regular = loadResource("/montserrat_regular.ttf").toByteArray()
-    val medium = loadResource("/montserrat_medium.ttf").toByteArray()
-    val light = loadResource("/montserrat_light.ttf").toByteArray()
-    val semiBold = loadResource("/montserrat_semibold.ttf").toByteArray()
+    val regular = loadResource("montserrat_regular.ttf")
+    val medium = loadResource("montserrat_medium.ttf")
+    val light = loadResource("montserrat_light.ttf")
+    val semiBold = loadResource("montserrat_semibold.ttf")
 
     Montserrat = FontFamily(
         Font(identity = "MontserratRegular", data = regular, weight = FontWeight.Normal),
@@ -49,11 +50,17 @@ private suspend fun loadMontserratFont() {
 }
 
 private suspend fun loadKarlaFont() {
-    val regular = loadResource("/karla_regular.ttf").toByteArray()
-    val bold = loadResource("/karla_bold.ttf").toByteArray()
+    val regular = loadResource("karla_regular.ttf")
+    val bold = loadResource("karla_bold.ttf")
 
     Karla = FontFamily(
         Font(identity = "KarlaRegular", data = regular, weight = FontWeight.Normal),
         Font(identity = "KarlaBold", data = bold, weight = FontWeight.Bold),
     )
+}
+
+
+@OptIn(ExperimentalResourceApi::class)
+internal suspend fun loadResource(resourcePath: String): ByteArray {
+    return resource(resourcePath).readBytes()
 }
