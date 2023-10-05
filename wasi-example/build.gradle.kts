@@ -163,6 +163,10 @@ rootProject.the<NodeJsRootExtension>().apply {
     nodeDownloadBaseUrl = "https://nodejs.org/download/v8-canary"
 }
 
+tasks.withType<org.jetbrains.kotlin.gradle.targets.js.npm.tasks.KotlinNpmInstallTask>().configureEach {
+    args.add("--ignore-engines")
+}
+
 tasks.withType<KotlinJsTest>().all {
     val denoExecTask = createDenoExec(
         inputFileProperty,
