@@ -66,9 +66,14 @@ compose {
 
 
 // Reason: https://jetbrains.slack.com/archives/C047QCXNLTX/p1694093406932359
-project.tasks.getByName("wasmJsDevelopmentExecutableCompileSync").doLast {
-    val f = project.buildDir.resolve("../../build/js/packages/jetsnackwasmapp/kotlin/jetsnackwasmapp.uninstantiated.mjs")
-        .normalize()
-    val t = f.readText().replace("'skia': imports['skia'] ?? await import('skia'),", "'skia': imports['skia'],")
-    f.writeText(t)
+val devCompileSyncTask = project.tasks.getByName("wasmJsDevelopmentExecutableCompileSync")
+val prodCompileSyncTask = project.tasks.getByName("wasmJsProductionExecutableCompileSync")
+listOf(devCompileSyncTask, prodCompileSyncTask).forEach {
+    it.doLast {
+        val f =
+            project.buildDir.resolve("../../build/js/packages/jetsnackwasmapp/kotlin/jetsnackwasmapp.uninstantiated.mjs")
+                .normalize()
+        val t = f.readText().replace("'skia': imports['skia'] ?? await import('skia'),", "'skia': imports['skia'],")
+        f.writeText(t)
+    }
 }
