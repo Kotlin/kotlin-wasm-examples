@@ -91,7 +91,7 @@ android {
 }
 
 compose {
-   val composeVersion = project.property("compose.version") as String
+   val composeVersion = project.property("compose.compiler.version") as String
    kotlinCompilerPlugin.set(composeVersion)
    val kotlinVersion = project.property("kotlin.version") as String
    kotlinCompilerPluginArgs.add("suppressKotlinVersionCompatibilityCheck=$kotlinVersion")

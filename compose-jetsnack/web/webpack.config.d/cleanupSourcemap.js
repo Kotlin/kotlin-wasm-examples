@@ -29,3 +29,7 @@
 
     fs.writeFileSync(mapFile, JSON.stringify(sourcemap));
 })();
+
+config.entry = {
+    main: [require('path').resolve(__dirname, "kotlin/load.mjs")]
+};
