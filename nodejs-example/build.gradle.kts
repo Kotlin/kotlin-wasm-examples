@@ -11,7 +11,7 @@ repositories {
 }
 
 kotlin {
-    wasm {
+    wasmJs {
         binaries.executable()
         nodejs()
     }

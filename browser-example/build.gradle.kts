@@ -13,7 +13,7 @@ repositories {
 }
 
 kotlin {
-    wasm {
+    wasmJs {
         binaries.executable()
         browser {
             commonWebpackConfig {

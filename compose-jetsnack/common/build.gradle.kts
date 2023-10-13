@@ -16,7 +16,7 @@ kotlin {
             kotlinOptions.jvmTarget = "11"
         }
     }
-    wasm {
+    wasmJs {
         browser()
     }
     sourceSets {

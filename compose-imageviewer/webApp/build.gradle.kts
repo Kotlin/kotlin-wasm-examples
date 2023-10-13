@@ -32,7 +32,7 @@ kotlin {
         binaries.executable()
     }
 
-    wasm {
+    wasmJs {
         moduleName = "imageviewer"
         browser {
             commonWebpackConfig {
