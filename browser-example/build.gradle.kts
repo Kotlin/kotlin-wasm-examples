@@ -2,7 +2,7 @@ import org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootExtension
 import org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpackConfig
 
 plugins {
-    kotlin("multiplatform") version "1.9.20-Beta2"
+    kotlin("multiplatform") version "1.9.20-RC"
 }
 
 group = "me.user"

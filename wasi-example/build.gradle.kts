@@ -5,7 +5,7 @@ import org.jetbrains.kotlin.gradle.targets.js.testing.KotlinJsTest
 import org.jetbrains.kotlin.gradle.testing.internal.KotlinTestReport
 
 plugins {
-    kotlin("multiplatform") version "1.9.20-Beta2"
+    kotlin("multiplatform") version "1.9.20-RC"
 }
 
 repositories {
