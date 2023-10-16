@@ -29,9 +29,3 @@ android {
         targetCompatibility = JavaVersion.VERSION_11
     }
 }
-
-
-compose {
-   val composeVersion = project.property("compose.version") as String
-   kotlinCompilerPlugin.set(composeVersion)
-}

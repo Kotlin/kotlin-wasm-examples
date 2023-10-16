@@ -89,10 +89,3 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
 }
-
-compose {
-   val composeVersion = project.property("compose.version") as String
-   kotlinCompilerPlugin.set(composeVersion)
-   val kotlinVersion = project.property("kotlin.version") as String
-   kotlinCompilerPluginArgs.add("suppressKotlinVersionCompatibilityCheck=$kotlinVersion")
-}
