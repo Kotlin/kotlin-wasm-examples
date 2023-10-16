@@ -25,6 +25,12 @@ allprojects {
                 val kotlinVersion = project.property("kotlin.version") as String
                 useVersion(kotlinVersion)
             }
+            if (requested.module.name.contains("kotlinx-serialization") &&
+                // kotlinx-datetime-wasm-js:0.4.1-wasm0 depends on outdated kotlinx-serialization-core:1.5.2-wasm0
+                requested.version == "1.5.2-wasm0"
+            ) {
+                useVersion("1.6.1-wasm0")
+            }
         }
     }
 }
