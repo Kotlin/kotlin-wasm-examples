@@ -1,3 +1,5 @@
+import org.jetbrains.compose.ComposeExtension
+
 group "com.example"
 version "1.0-SNAPSHOT"
 
@@ -13,14 +15,6 @@ allprojects {
     configurations.all {
         val conf = this
         conf.resolutionStrategy.eachDependency {
-            val isWasm = conf.name.contains("wasm", true)
-            val isJs = conf.name.contains("js", true)
-            val isComposeGroup = requested.module.group.startsWith("org.jetbrains.compose")
-            val isComposeCompiler = requested.module.group.startsWith("org.jetbrains.compose.compiler")
-            if (isComposeGroup && !isComposeCompiler && !isWasm && !isJs) {
-                val composeVersion = project.property("compose.version") as String
-                useVersion(composeVersion)
-            }
             if (requested.module.name.startsWith("kotlin-stdlib")) {
                 val kotlinVersion = project.property("kotlin.version") as String
                 useVersion(kotlinVersion)
@@ -31,6 +25,15 @@ allprojects {
             ) {
                 useVersion("1.6.1-wasm0")
             }
+        }
+    }
+
+    afterEvaluate {
+        extensions.findByType(ComposeExtension::class.java)?.apply {
+            val composeCompilerVersion = project.property("compose.compiler.version") as String
+            kotlinCompilerPlugin.set(composeCompilerVersion)
+            val kotlinVersion = project.property("kotlin.version") as String
+            kotlinCompilerPluginArgs.add("suppressKotlinVersionCompatibilityCheck=$kotlinVersion")
         }
     }
 }

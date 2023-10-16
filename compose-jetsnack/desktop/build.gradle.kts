@@ -39,8 +39,3 @@ compose.desktop {
         }
     }
 }
-
-compose {
-   val composeVersion = project.property("compose.version") as String
-   kotlinCompilerPlugin.set(composeVersion)
-}
