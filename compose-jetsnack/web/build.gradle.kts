@@ -14,6 +14,7 @@ kotlin {
         moduleName = "jetsnackwasmapp"
         browser {
             commonWebpackConfig {
+                outputFileName = "jetsnackwasmapp.js"
                 devServer = (devServer ?: KotlinWebpackConfig.DevServer()).copy(
 //                    open = mapOf(
 //                        "app" to mapOf(

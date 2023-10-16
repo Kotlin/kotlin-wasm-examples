@@ -90,11 +90,3 @@ compose {
    val kotlinVersion = project.property("kotlin.version") as String
    kotlinCompilerPluginArgs.add("suppressKotlinVersionCompatibilityCheck=$kotlinVersion")
 }
-
-
-project.tasks.getByName("wasmJsDevelopmentExecutableCompileSync").doLast {
-    val f = project.buildDir.resolve("../../build/js/packages/imageviewer/kotlin/imageviewer.uninstantiated.mjs")
-        .normalize()
-    val t = f.readText().replace("'skia': imports['skia'] ?? await import('skia'),", "'skia': imports['skia'],")
-    f.writeText(t)
-}
