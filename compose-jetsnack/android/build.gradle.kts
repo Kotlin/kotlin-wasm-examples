@@ -35,8 +35,3 @@ android {
         }
     }
 }
-
-compose {
-   val composeVersion = project.property("compose.compiler.version") as String
-   kotlinCompilerPlugin.set(composeVersion)
-}
