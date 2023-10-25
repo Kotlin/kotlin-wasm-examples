@@ -22,6 +22,7 @@
             left: 100px;
             z-index: 100;
             font-size: initial;
+            display: none;
         }
         #warning li {
             padding-bottom: 15px;
@@ -90,4 +91,19 @@
     <div id="close" onclick="document.getElementById('footer').style.display='none'">ⓧ</div>
 </div>
 </body>
+
+<script type="application/javascript" >
+    const unhandledError = (event, error) => {
+        if (error instanceof WebAssembly.CompileError) {
+            document.getElementById("warning").style.display="initial";
+
+            // Hide a Scary Webpack Overlay which is less informative in this case.  
+            const webpackOverlay = document.getElementById("webpack-dev-server-client-overlay");
+            if (webpackOverlay != null) webpackOverlay.style.display="none";
+        }
+    }
+    addEventListener("error", (event) => unhandledError(event, event.error));
+    addEventListener("unhandledrejection", (event) => unhandledError(event, event.reason));
+</script>
+
 </html>
