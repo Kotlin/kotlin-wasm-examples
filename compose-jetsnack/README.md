@@ -41,31 +41,13 @@ Almost all modern browsers already support WebAssembly 1.0.
 
 To run applications built with Kotlin/Wasm in a browser, you need to enable an experimental [garbage collection feature](https://github.com/WebAssembly/gc):
 
-**Chrome**:
+- For **Chrome** and **Chromium-based** browsers (Edge, Brave etc.), it **should just work** since version 119.
+- For **Firefox** 120 it **should just work**.
+- For **Firefox** 119:
+    1. Open `about:config` in the browser.
+    2. Enable **javascript.options.wasm_gc**.
+    3. Refresh the page.
 
-For version 109:
-
-  1. Run the application with the `--js-flags=--experimental-wasm-gc` command line argument.
-
-For version 110 or later:
-
-  1. Go to `chrome://flags/#enable-webassembly-garbage-collection` in your browser.
-  2. Enable **WebAssembly Garbage Collection**.
-  3. Relaunch your browser.
-
-**Firefox Nightly**:
-
-For version 112 or later:
-
-1. Go to `about:config` in your browser.
-2. Enable `javascript.options.wasm_function_references` and `javascript.options.wasm_gc` options.
-3. Relaunch your browser.
-
-**Edge**:
-
-For version 109 or later:
-
-1. Run the application with the `--js-flags=--experimental-wasm-gc` command line argument.
 
 For more information see https://kotl.in/wasm_help/.
 
