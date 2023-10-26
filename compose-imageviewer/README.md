@@ -36,9 +36,12 @@ Check out the repo, navigate to the project folder, and use the following comman
 >**Note**
 > Using experimental Kotlin/Wasm may require enabling experimental features in the target environment.
 
-- **Chrome** 110 or newer: enable **WebAssembly Garbage Collection** at [chrome://flags/#enable-webassembly-garbage-collection](chrome://flags/#enable-webassembly-garbage-collection) or with Chrome 109 or newer, run the program with the `--js-flags=--experimental-wasm-gc` command line argument.
-- **Firefox Nightly** 112 or newer: enable **javascript.options.wasm_function_references** and **javascript.options.wasm_gc** at [about:config](about:config).
-- **Edge** 109 or newer: run the program with the `--js-flags=--experimental-wasm-gc` command line argument.
+- For **Chrome** and **Chromium-based** browsers (Edge, Brave etc.), it **should just work** since version 119.
+- For **Firefox** 120 it **should just work**.
+- For **Firefox** 119:
+    1. Open `about:config` in the browser.
+    2. Enable **javascript.options.wasm_gc**.
+    3. Refresh the page.
 
 For more information see https://kotl.in/wasm_help/.
 
