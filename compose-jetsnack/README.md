@@ -43,11 +43,11 @@ To run applications built with Kotlin/Wasm in a browser, you need to enable an e
 
 **Chrome**:
 
-For version 109:
+For version 119:
 
   1. Run the application with the `--js-flags=--experimental-wasm-gc` command line argument.
 
-For version 110 or later:
+Or for version 119 or later:
 
   1. Go to `chrome://flags/#enable-webassembly-garbage-collection` in your browser.
   2. Enable **WebAssembly Garbage Collection**.
@@ -55,7 +55,7 @@ For version 110 or later:
 
 **Firefox Nightly**:
 
-For version 112 or later:
+For version 121.0a1 or later:
 
 1. Go to `about:config` in your browser.
 2. Enable `javascript.options.wasm_function_references` and `javascript.options.wasm_gc` options.
@@ -63,7 +63,7 @@ For version 112 or later:
 
 **Edge**:
 
-For version 109 or later:
+For version 119 or later:
 
 1. Run the application with the `--js-flags=--experimental-wasm-gc` command line argument.
 
