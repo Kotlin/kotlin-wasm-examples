@@ -3,6 +3,11 @@ import kotlin.wasm.unsafe.Pointer
 import kotlin.wasm.unsafe.UnsafeWasmMemoryApi
 import kotlin.wasm.unsafe.withScopedMemoryAllocator
 
+fun main() {
+    println("Hello from Kotlin via WASI")
+    println("Current timestamp is: ${wasiMonotonicTime()}")
+}
+
 @WasmImport("wasi_snapshot_preview1", "clock_time_get")
 private external fun wasiRawClockTimeGet(clockId: Int, precision: Long, resultPtr: Int): Int
 

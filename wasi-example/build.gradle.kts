@@ -147,6 +147,7 @@ fun Project.createDenoExec(
 kotlin {
     wasmWasi {
         nodejs()
+        binaries.executable()
     }
 
     sourceSets {
