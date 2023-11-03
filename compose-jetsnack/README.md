@@ -2,6 +2,8 @@
 
 Web version of [Jetsnack application](https://github.com/android/compose-samples/tree/main/Jetsnack) built with [Compose Multiplatform for Web](#compose-multiplatform-for-web) and [Kotlin/Wasm](#kotlinwasm).
 
+[![Static Badge](https://img.shields.io/badge/online%20demo%20%F0%9F%9A%80-6b57ff?style=for-the-badge)](https://zal.im/wasm/jetsnack).
+
 ![](screenshots/jetsnack.png)
 
 > To learn more about the Jetsnack application, visit the [README.md of the original project](https://github.com/android/compose-samples/tree/main/Jetsnack).
@@ -37,9 +39,7 @@ It has Kotlin/Wasm support out of the box.
 
 ### Browser (for Kotlin/Wasm target)
 
-Almost all modern browsers already support WebAssembly 1.0.
-
-To run applications built with Kotlin/Wasm in a browser, you need to enable an experimental [garbage collection feature](https://github.com/WebAssembly/gc):
+To run applications built with Kotlin/Wasm in a browser, you need a browser supporting [wasm garbage collection feature](https://github.com/WebAssembly/gc):
 
 - For **Chrome** and **Chromium-based** browsers (Edge, Brave etc.), it **should just work** since version 119.
 - For **Firefox** 120 it **should just work**.

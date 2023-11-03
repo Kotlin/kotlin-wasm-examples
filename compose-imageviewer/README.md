@@ -13,6 +13,8 @@ all the benefits that WebAssembly has to offer, such as good and predictable per
 
 Web version of an image gallery for remote server image viewing built with Compose Multiplatform.
 
+[![Static Badge](https://img.shields.io/badge/online%20demo%20%F0%9F%9A%80-6b57ff?style=for-the-badge)](https://zal.im/wasm/iv).
+
 ![](screenshots/imageviewer.png)
 
 ## Build and run
@@ -33,8 +35,7 @@ Check out the repo, navigate to the project folder, and use the following comman
 
 ## Setup Environment
 
->**Note**
-> Using experimental Kotlin/Wasm may require enabling experimental features in the target environment.
+To run applications built with Kotlin/Wasm in a browser, you need a browser supporting [wasm garbage collection feature](https://github.com/WebAssembly/gc):
 
 - For **Chrome** and **Chromium-based** browsers (Edge, Brave etc.), it **should just work** since version 119.
 - For **Firefox** 120 it **should just work**.
