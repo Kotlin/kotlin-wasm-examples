@@ -12,10 +12,16 @@ import com.example.jetsnack.JetSnackAppEntryPoint
 import com.example.jetsnack.ui.theme.Karla
 import com.example.jetsnack.ui.theme.Montserrat
 import org.jetbrains.compose.resources.ExperimentalResourceApi
+import org.jetbrains.compose.resources.configureWebResources
 import org.jetbrains.compose.resources.resource
+import org.jetbrains.compose.resources.urlResource
 
-@OptIn(ExperimentalComposeUiApi::class)
+@OptIn(ExperimentalComposeUiApi::class, ExperimentalResourceApi::class)
 fun main() {
+    configureWebResources {
+        // same as default - this is not necessary to add here. It's here to show this feature
+        setResourceFactory { urlResource("./$it") }
+    }
     CanvasBasedWindow("JetSnack", canvasElementId = "jetsnackCanvas") {
         var loading: Boolean by remember { mutableStateOf(true) }
 
