@@ -8,9 +8,10 @@ pluginManagement {
     }
 
     plugins {
-        val kotlinVersion = extra["kotlin.version"] as String
+        val kotlinGeneration = extra["kotlin.generation"] as String
+        val kotlinVersion = extra["kotlin.version.$kotlinGeneration"] as String
         val agpVersion = extra["agp.version"] as String
-        val composeVersion = extra["compose.wasm.version"] as String
+        val composeVersion = extra["compose.wasm.version.$kotlinGeneration"] as String
 
         kotlin("jvm").version(kotlinVersion)
         kotlin("multiplatform").version(kotlinVersion)
