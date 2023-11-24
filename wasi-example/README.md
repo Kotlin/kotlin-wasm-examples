@@ -1,6 +1,6 @@
 # Kotlin/Wasm WASI Example
 
-A simple app using WASI API in the Node.js.
+A simple app using WASI API in the Node.js and Deno.
 
 > **Note**
 > It uses version of 21.0.0-v8-canary*
