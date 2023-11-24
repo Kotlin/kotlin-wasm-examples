@@ -17,6 +17,16 @@ Check out the repo, navigate to the project folder, and use the following comman
 
 `./gradlew wasmWasiNodeTest`
 
+### Run the program via Gradle with Deno
+
+`./gradlew wasmWasiDenoRun`
+
+### Run tests via Gradle with Deno
+
+`./gradlew wasmWasiDenoTest`
+
+(for Windows platform deno.exe expected to be installed)
+
 # Feedback & Questions
 
 Give it a try, and share your feedback and ask questions in the Kotlin Slack [#webassembly](https://slack-chats.kotlinlang.org/c/webassembly) channel (if you’re not a member, [apply here](https://kotl.in/slack)) or on Twitter to [@bashorov](https://twitter.com/bashorov).

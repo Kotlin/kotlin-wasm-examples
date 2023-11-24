@@ -1,5 +1,6 @@
 import org.gradle.internal.os.OperatingSystem
 import org.jetbrains.kotlin.de.undercouch.gradle.tasks.download.Download
+import org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsExec
 import org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootExtension
 import org.jetbrains.kotlin.gradle.targets.js.testing.KotlinJsTest
 import org.jetbrains.kotlin.gradle.testing.internal.KotlinTestReport
@@ -41,7 +42,8 @@ val currentOsType = run {
 }
 
 val unzipDeno = run {
-    val denoDirectory = "https://github.com/denoland/deno/releases/latest/download"
+    val denoVersion = "1.38.3"
+    val denoDirectory = "https://github.com/denoland/deno/releases/download/v$denoVersion"
     val denoSuffix = when (currentOsType) {
         OsType(OsName.LINUX, OsArch.X86_64) -> "x86_64-unknown-linux-gnu"
         OsType(OsName.MAC, OsArch.X86_64) -> "x86_64-apple-darwin"
@@ -54,14 +56,14 @@ val unzipDeno = run {
 
     val downloadDeno = tasks.register("denoDownload", Download::class) {
         src(denoLocation)
-        dest(File(downloadedTools, "deno-$denoSuffix.zip"))
+        dest(File(downloadedTools, "deno-$denoVersion-$denoSuffix.zip"))
         overwrite(false)
     }
 
     tasks.register("denoUnzip", Copy::class) {
         dependsOn(downloadDeno)
         from(zipTree(downloadDeno.get().dest))
-        val unpackedDir = File(downloadedTools, "deno-$denoSuffix")
+        val unpackedDir = File(downloadedTools, "deno-$denoVersion-$denoSuffix")
         into(unpackedDir)
     }
 }
@@ -133,7 +135,6 @@ fun Project.createDenoExec(
         newArgs.add("run")
         newArgs.add("--allow-read")
         newArgs.add("--allow-env")
-        newArgs.add("--v8-flags=--experimental-wasm-gc")
 
         newArgs.add(denoFileName)
 
@@ -184,5 +185,19 @@ tasks.withType<KotlinJsTest>().all {
 
     tasks.withType<KotlinTestReport> {
         dependsOn(denoExecTask)
+    }
+}
+
+tasks.withType<NodeJsExec>().all {
+    val denoExecTask = createDenoExec(
+        inputFileProperty,
+        name.replace("Node", "Deno"),
+        group
+    )
+
+    denoExecTask.configure {
+        dependsOn (
+            project.provider { this@all.taskDependencies }
+        )
     }
 }
