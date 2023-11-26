@@ -5,19 +5,21 @@ import kotlin.wasm.unsafe.withScopedMemoryAllocator
 
 fun main() {
     println("Hello from Kotlin via WASI")
-    println("Current timestamp is: ${wasiMonotonicTime()}")
+    println("Current 'realtime' timestamp is: ${wasiRealTime()}")
+    println("Current 'monotonic' timestamp is: ${wasiMonotonicTime()}")
 }
 
 @WasmImport("wasi_snapshot_preview1", "clock_time_get")
 private external fun wasiRawClockTimeGet(clockId: Int, precision: Long, resultPtr: Int): Int
 
+private const val REALTIME = 0
 private const val MONOTONIC = 1
 
 @OptIn(UnsafeWasmMemoryApi::class)
-fun wasiMonotonicTime(): Long = withScopedMemoryAllocator { allocator ->
+fun wasiGetTime(clockId: Int): Long = withScopedMemoryAllocator { allocator ->
     val rp0 = allocator.allocate(8)
     val ret = wasiRawClockTimeGet(
-        clockId = MONOTONIC,
+        clockId = clockId,
         precision = 1,
         resultPtr = rp0.address.toInt()
     )
@@ -26,3 +28,7 @@ fun wasiMonotonicTime(): Long = withScopedMemoryAllocator { allocator ->
     }
     (Pointer(rp0.address.toInt().toUInt())).loadLong()
 }
+
+fun wasiRealTime(): Long = wasiGetTime(REALTIME)
+
+fun wasiMonotonicTime(): Long = wasiGetTime(MONOTONIC)
