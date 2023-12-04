@@ -4,6 +4,8 @@ A simple app showing "Hello World" in the browser using DOM API.
 
 [![Static Badge](https://img.shields.io/badge/online%20demo%20%F0%9F%9A%80-6b57ff?style=for-the-badge)](https://zal.im/wasm/example).
 
+![](screenshots/browser-example.png)
+
 ## Build and run
 
 Check out the repo, navigate to the project folder, and use the following command:
