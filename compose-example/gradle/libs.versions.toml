@@ -1,6 +1,6 @@
 [versions]
 compose = "1.5.4"
-compose-plugin = "0.0.0-dev1316"
+compose-plugin = "1.6.0-alpha01"
 compose-compiler = "1.5.4"
 agp = "8.1.4"
 android-minSdk = "24"
