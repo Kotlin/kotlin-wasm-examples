@@ -1,6 +1,6 @@
 # Kotlin/Wasm Node.js Example
 
-A simple app printing "Hello World" in the Node.js.
+A simple app printing "Hello World" and making a HTTP request in the Node.js.
 
 > **Note**
 > It uses a nightly version of Node.js 20
