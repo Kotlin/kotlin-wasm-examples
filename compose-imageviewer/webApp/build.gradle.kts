@@ -47,9 +47,6 @@ kotlin {
                     static = (static ?: mutableListOf()).apply {
                         // Serve sources to debug inside browser
                         add(project.rootDir.path)
-                        add(project.rootDir.path + "/shared/")
-                        add(project.rootDir.path + "/nonAndroidMain/")
-                        add(project.rootDir.path + "/webApp/")
                     }
                 }
             }
