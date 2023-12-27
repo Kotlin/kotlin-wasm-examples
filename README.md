@@ -12,8 +12,9 @@ To know more about Kotlin wasm, please visit https://kotl.in/wasm.
 * [Compose Example](compose-example#compose-for-web-example) — A simple Compose Multiplatform app template.
 * [Compose Jetsnack](compose-jetsnack#jetsnack) — Web version of [Jetsnack application](https://github.com/android/compose-samples/tree/main/Jetsnack) built with Compose Multiplatform
 * [Compose Image Viewer](compose-imageviewer#compose-multiplatform-for-web) — Web version of Image Viewer application built with Compose Multiplatform
-* [Browser Example](browser-example#kotlinwasm-browser-example) -- A simple app showing "Hello World" in the browser using DOM API. 
-* [Node.js Example](nodejs-example#kotlinwasm-nodejs-example) -- A simple app printing "Hello World" in the Node.js.
+* [Browser Hello World](hello-world#kotlinwasm-browser-example) -- A simple app showing "Hello World" in the browser using browser API.
+* [Browser DOM Example](browser-example#kotlinwasm-browser-example) -- A simple app showing time in the time zone put in the input field.
+* [Node.js Hello World](nodejs-example#kotlinwasm-nodejs-example) -- A simple app printing "Hello World" in the Node.js.
 * [KoWasm](https://github.com/kowasm/kowasm) -- Server-side and full stack development with Kotlin and WebAssembly leveraging WASI and Component Model.
 * [WASI Example](wasi-example#kotlinwasm-wasi-example) -- A simple app using WASI API in the Node.js and Deno.
 

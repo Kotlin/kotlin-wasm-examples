@@ -1,10 +1,6 @@
 # Kotlin/Wasm Browser Example
 
-A simple app showing time in the time zone put in the input field.
-
-[![Static Badge](https://img.shields.io/badge/online%20demo%20%F0%9F%9A%80-6b57ff?style=for-the-badge)](https://zal.im/wasm/example).
-
-![](screenshots/browser-example.png)
+A simple app printing "Hello World" in the browser alert box
 
 ## Build and run
 
