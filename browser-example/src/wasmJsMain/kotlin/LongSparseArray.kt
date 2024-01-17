@@ -28,12 +28,14 @@ private val DELETED = Any()
 
 @Suppress("NOTHING_TO_INLINE")
 internal inline fun <E> LongSparseArray<E>.commonGet(key: Long): E? {
-    return commonGetInternal(key, null)
+    // @Suppress("UNCHECKED_CAST")
+    return commonGetInternal(key, null) // as E?
 }
 
 @Suppress("NOTHING_TO_INLINE")
 internal inline fun <E> LongSparseArray<E>.commonGet(key: Long, defaultValue: E): E {
-    return commonGetInternal(key, defaultValue)
+    // @Suppress("UNCHECKED_CAST")
+    return commonGetInternal(key, defaultValue) // as E
 }
 
 @Suppress("NOTHING_TO_INLINE")
@@ -49,6 +51,21 @@ internal inline fun <T : E?, E> LongSparseArray<E>.commonGetInternal(
         values[key.toInt()] as T
     } // as T //  casting here helps too
 }
+
+// This is a workaround we use in Compose sources
+
+//@Suppress("NOTHING_TO_INLINE")
+//internal inline fun LongSparseArray<*>.commonGetInternal(
+//    key: Long,
+//    defaultValue: Any?
+//): Any? {
+//    val i = key.toInt()
+//    return if (i < 0 || values[i] === DELETED) {
+//        defaultValue
+//    } else {
+//        values[i]
+//    }
+//}
 
 @Suppress("NOTHING_TO_INLINE")
 internal inline fun <E> LongSparseArray<E>.commonPut(key: Long, value: E) {
