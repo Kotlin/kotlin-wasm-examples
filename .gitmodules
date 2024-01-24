@@ -1,0 +1,12 @@
+[submodule "compose-example"]
+	path = compose-example
+	url = https://github.com/Kotlin/kotlin-wasm-compose-template
+[submodule "nodejs-example"]
+	path = nodejs-example
+	url = https://github.com/Kotlin/kotlin-wasm-nodejs-template
+[submodule "wasi-example"]
+	path = wasi-example
+	url = https://github.com/Kotlin/kotlin-wasm-wasi-template
+[submodule "browser-example"]
+	path = browser-example
+	url = https://github.com/Kotlin/kotlin-wasm-browser-template
