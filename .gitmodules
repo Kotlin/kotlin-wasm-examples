@@ -1,0 +1,3 @@
+[submodule "compose-example"]
+	path = compose-example
+	url = https://github.com/Kotlin/kotlin-wasm-compose-template
