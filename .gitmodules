@@ -4,3 +4,6 @@
 [submodule "nodejs-example"]
 	path = nodejs-example
 	url = https://github.com/Kotlin/kotlin-wasm-nodejs-template
+[submodule "wasi-example"]
+	path = wasi-example
+	url = https://github.com/Kotlin/kotlin-wasm-wasi-template
