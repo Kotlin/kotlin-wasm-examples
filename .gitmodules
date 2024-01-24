@@ -1,3 +1,6 @@
 [submodule "compose-example"]
 	path = compose-example
 	url = https://github.com/Kotlin/kotlin-wasm-compose-template
+[submodule "nodejs-example"]
+	path = nodejs-example
+	url = https://github.com/Kotlin/kotlin-wasm-nodejs-template
