@@ -2,6 +2,8 @@
 
 This example shows a simple application using WASI API in Node.js and Deno.
 
+![](screenshots/wasi-output.png)
+
 > **Note:**
 > This example uses a version of 21.0.0-v8-canary.
 

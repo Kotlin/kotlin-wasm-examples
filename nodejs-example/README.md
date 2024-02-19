@@ -2,6 +2,8 @@
 
 This example shows a simple application printing "Hello World" in Node.js.
 
+![](screenshots/hello-world.png)
+
 > **Note:**
 > This application uses a nightly version of Node.js 20.
 
