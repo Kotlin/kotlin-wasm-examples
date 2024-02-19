@@ -48,8 +48,8 @@ To run tests with Deno, type the following Gradle command in the terminal:
 
 `./gradlew wasmWasiDenoTest`
 
->**Note:**
->For Windows platform, `deno.exe` is expected to be installed. For more information, 
+> **Note:**
+> For Windows platform, `deno.exe` is expected to be installed. For more information, 
 > see [Deno's installation documentation](https://docs.deno.com/runtime/manual/getting_started/installation).
 
 ## Feedback and questions

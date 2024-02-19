@@ -6,16 +6,16 @@ This example shows a web version of an image gallery for remote server image vie
 
 ![](screenshots/imageviewer.png)
 
-## Compose Multiplatform for Web
+## Compose Multiplatform for web
 
 > **Note:**
 > Web support is in [Alpha](https://kotlinlang.org/docs/components-stability.html). It may be changed at any time. You can use it in scenarios before production.
 > We would appreciate your feedback in [GitHub](https://github.com/JetBrains/compose-multiplatform/issues).
 
-Compose Multiplatform for Web lets you experiment with sharing your mobile or desktop UIs with the web. Compose Multiplatform for Web is based on [Kotlin/Wasm](https://kotl.in/wasm),
+Compose Multiplatform for web lets you experiment with sharing your mobile or desktop UIs with the web. Compose Multiplatform for web is based on [Kotlin/Wasm](https://kotl.in/wasm),
 the newest target for Kotlin Multiplatform projects. 
 
-Compose Multiplatform for Web allows you to run your Kotlin code in the browser leveraging all WebAssembly's benefits, such as 
+Compose Multiplatform for web allows you to run your Kotlin code in the browser leveraging all WebAssembly's benefits, such as 
 high and predictable application performance.
 
 In the next sections, you can find information to try out this application built with Kotlin/Wasm.
@@ -50,8 +50,8 @@ To run applications built with Kotlin/Wasm in a browser, you need a browser supp
 Wasm GC support is currently under
 [active development](https://bugs.webkit.org/show_bug.cgi?id=247394).
 
->**Note:**
->For more information about the browser versions, see the [Troubleshooting documentation](https://kotl.in/wasm_help/).
+> **Note:**
+> For more information about the browser versions, see the [Troubleshooting documentation](https://kotl.in/wasm_help/).
 
 ## Build and run
 
