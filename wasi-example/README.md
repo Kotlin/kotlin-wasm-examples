@@ -1,37 +1,61 @@
-# Kotlin/Wasm WASI Example
+# Kotlin/Wasm WASI example
 
-A simple app using WASI API in the Node.js and Deno.
+This example showcases a simple application using WASI API in Node.js and Deno.
 
-> **Note**
-> It uses version of 21.0.0-v8-canary*
+![](screenshots/wasi-output.png)
+
+> **Note:**
+> This example uses a version of 21.0.0-v8-canary.
+
+Follow the instructions in the sections below to try out this Kotlin/Wasm application.
+
+## Set up the environment
+
+Before starting, ensure you have the necessary IDE setup to run the application.
+
+### IDE
+
+We recommend using [IntelliJ IDEA 2023.1 or later](https://www.jetbrains.com/idea/) to work with the project.
+It supports Kotlin/Wasm out of the box.
 
 ## Build and run
 
-Check out the repo, navigate to the project folder, and use the following command:
+To build and run the application:
 
-### Run the program via Gradle with NodeJs
+1. In IntelliJ IDEA, open the repository.
+2. Navigate to the `wasi-example` project folder.
+3. Run the application by typing one of the following Gradle commands in the terminal:
 
-`./gradlew wasmWasiNodeRun`
+* **Run the program with NodeJs:**
 
-### Run tests via Gradle with NodeJs
+  `./gradlew wasmWasiNodeRun` 
+  <br>&nbsp;<br>
 
-`./gradlew wasmWasiNodeTest`
+* **Run tests with NodeJs:**
 
-### Run the program via Gradle with Deno
+  `./gradlew wasmWasiNodeTest`
+  <br>&nbsp;<br>
 
-`./gradlew wasmWasiDenoRun`
+* **Run the program with Deno:**
 
-### Run tests via Gradle with Deno
+  `./gradlew wasmWasiDenoRun`
+  <br>&nbsp;<br>
 
-`./gradlew wasmWasiDenoTest`
+* **Run tests with Deno:**
 
-(for Windows platform deno.exe expected to be installed)
+  `./gradlew wasmWasiDenoTest`
 
-# Feedback & Questions
+  > **Note:**
+  > For Windows platform, ensure `deno.exe` is installed. For more information, 
+  > see [Deno's installation documentation](https://docs.deno.com/runtime/manual/getting_started/installation).
 
-Give it a try, and share your feedback and ask questions in the Kotlin Slack [#webassembly](https://slack-chats.kotlinlang.org/c/webassembly) channel (if you’re not a member, [apply here](https://kotl.in/slack)) or on Twitter to [@bashorov](https://twitter.com/bashorov).
+## Feedback and questions
 
-# Learn more
+Give it a try and share your feedback or questions in our [#webassembly](https://slack-chats.kotlinlang.org/c/webassembly) 
+Slack channel. [Get a Slack invite](https://surveys.jetbrains.com/s3/kotlin-slack-sign-up).
+You can also share your comments with [@bashorov](https://twitter.com/bashorov) on X (Twitter).
+
+## Learn more
 
 * [Kotlin/Wasm](https://kotl.in/wasm/)
-* [Other examples](../../../#examples)
+* [Other Kotlin/Wasm examples](https://github.com/Kotlin/kotlin-wasm-examples/tree/main)
