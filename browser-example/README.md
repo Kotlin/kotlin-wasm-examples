@@ -1,6 +1,6 @@
 # Kotlin/Wasm browser example
 
-This example showcases a Kotlin/Wasm app. The applicationshows "Hello World" in the browser using DOM API.
+This example showcases a Kotlin/Wasm app. The application shows "Hello World" in the browser using DOM API.
 
 Check it out:
 
