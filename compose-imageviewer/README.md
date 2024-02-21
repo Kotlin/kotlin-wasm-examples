@@ -74,8 +74,7 @@ To build and run the application:
   > **Note:**
   > The port number can vary. If the port 8080 is unavailable, you can find the corresponding port number printed in the console
   > after building the application.
-
-  <br>&nbsp;<br>
+<br>&nbsp;<br>
 
 * **Desktop version:**
 
