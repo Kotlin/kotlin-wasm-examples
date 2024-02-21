@@ -12,7 +12,7 @@ This example showcases a web application built with [Compose Multiplatform for w
 >
 > [Join the compose-web community](https://slack-chats.kotlinlang.org/c/compose-web).
 
-Compose Multiplatform for web enables experimenting with sharing your mobile or desktop UIs on the web.
+Compose Multiplatform for web enables sharing your mobile or desktop UIs on the web.
 
 Compose Multiplatform for web is based on [Kotlin/Wasm](https://kotl.in/wasm), the newest target for Kotlin Multiplatform projects.
 This enables running your code in the browser, leveraging WebAssembly's advantages like high and consistent application performance.

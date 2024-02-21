@@ -23,7 +23,7 @@ Kotlin/Wasm is a new target that enables you to compile Kotlin code to [WebAssem
 
 By compiling Kotlin code to WebAssembly, you can run it on any WebAssembly-compatible environment that meets Kotlin's requirements, including web browsers.
 
-With Kotlin/Wasm, you will encounter numerous development opportunities, such as building high-performance web applications and serverless functions.
+With Kotlin/Wasm, you gain the capability to develop high-performance web applications and serverless functions, opening up a wide range of potential projects.
 
 ## Compose Multiplatform for web
 
@@ -34,7 +34,7 @@ With Kotlin/Wasm, you will encounter numerous development opportunities, such as
 >
 > [Join the compose-web community](https://slack-chats.kotlinlang.org/c/compose-web).
 
-Compose Multiplatform for web enables experimenting with sharing your mobile or desktop UIs on the web.
+Compose Multiplatform for web enables sharing your mobile or desktop UIs on the web.
 
 Compose Multiplatform for web is based on [Kotlin/Wasm](https://kotl.in/wasm), the newest target for Kotlin Multiplatform projects.
 This enables running your code in the browser, leveraging WebAssembly's advantages like high and consistent application performance.

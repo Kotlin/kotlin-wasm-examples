@@ -12,8 +12,8 @@ This example demonstrates a web-based image gallery for viewing images from a re
 > Web support is in [Alpha](https://kotlinlang.org/docs/components-stability.html). It may be changed at any time. You can use it in scenarios before production.
 > We would appreciate your feedback in [GitHub](https://github.com/JetBrains/compose-multiplatform/issues).
 
-Compose Multiplatform for web lets you experiment with sharing your mobile or desktop UIs on the web. Compose Multiplatform for web is based on [Kotlin/Wasm](https://kotl.in/wasm),
-the newest target for Kotlin Multiplatform projects. 
+Compose Multiplatform for web enables sharing your mobile or desktop UIs on the web. Compose Multiplatform for web is based on [Kotlin/Wasm](https://kotl.in/wasm),
+the newest target for Kotlin Multiplatform projects.
 
 Compose Multiplatform for web allows you to run your Kotlin code in the browser, leveraging all WebAssembly's benefits like 
 high and consistent application performance.
