@@ -12,13 +12,13 @@ Each example includes the source code and a `README.md` file explaining how to b
 
 These are the Kotlin/Wasm examples you can try:
 
-* **[Compose example](compose-example/README.md)** — A simple Compose Multiplatform app template
+* **[Compose example](compose-example/README.md)** — A simple Compose Multiplatform application template
 * **[Compose Jetsnack](compose-jetsnack/README.md)** — Web version of a [Jetsnack application](https://github.com/android/compose-samples/tree/main/Jetsnack) built with Compose Multiplatform
 * **[Compose image viewer](compose-imageviewer/README.md)** — Web version of an image viewer application built with Compose Multiplatform
-* **[Browser example](browser-example/README.md)** — A simple app showing "Hello World" in the browser using DOM API
-* **[Node.js example](nodejs-example/README.md)** — A simple app printing "Hello World" in the Node.js
+* **[Browser example](browser-example/README.md)** — A simple application showing "Hello World" in the browser using DOM API
+* **[Node.js example](nodejs-example/README.md)** — A simple application printing "Hello World" in the Node.js
 * **[KoWasm](https://github.com/kowasm/kowasm)** — Server-side and full stack development with Kotlin and WebAssembly leveraging WASI and Component Model
-* **[WASI example](wasi-example/README.md)** — A simple app using WASI API in the Node.js and Deno
+* **[WASI example](wasi-example/README.md)** — A simple application using WASI API in the Node.js and Deno
 
 ## Build and run
 

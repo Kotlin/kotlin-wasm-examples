@@ -1,17 +1,17 @@
 # Kotlin/Wasm Node.js example
 
-This example shows a simple application printing "Hello World" in Node.js.
+This example showcases a simple application printing "Hello World" in Node.js.
 
 ![](screenshots/hello-world.png)
 
 > **Note:**
 > This application uses a nightly version of Node.js 20.
 
-In the next sections, you can find information to try out this application built with Kotlin/Wasm.
+Follow the instructions in the sections below to try out this Kotlin/Wasm application.
 
 ## Set up the environment
 
-Before you start, prepare the IDE you require to run the application.
+Before starting, ensure you have the necessary IDE setup to run the application.
 
 ### IDE
 
@@ -24,9 +24,9 @@ To build and run the application:
 
 1. In IntelliJ IDEA, open the repository.
 2. Navigate to the `nodejs-example` project folder.
-3. Run the application by using the following Gradle command:
+3. Run the application by typing the following Gradle command in the terminal:
 
-`./gradlew wasmJsNodeRun`
+   `./gradlew wasmJsNodeRun`
 
 ## Feedback and questions
 

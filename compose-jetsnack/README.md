@@ -1,6 +1,6 @@
 # Kotlin/Wasm Jetsnack example
 
-This example shows a web version of the [Jetsnack application](https://github.com/android/compose-samples/tree/main/Jetsnack) built with [Compose Multiplatform for web](#compose-multiplatform-for-web) and [Kotlin/Wasm](#kotlinwasm).
+This example showcases a web version of the [Jetsnack application](https://github.com/android/compose-samples/tree/main/Jetsnack) built with [Compose Multiplatform for web](#compose-multiplatform-for-web) and [Kotlin/Wasm](#kotlinwasm).
 
 Check it out:
 
@@ -34,16 +34,16 @@ With Kotlin/Wasm, you will encounter numerous development opportunities, such as
 >
 > [Join the compose-web community](https://slack-chats.kotlinlang.org/c/compose-web).
 
-Compose Multiplatform for web enables experimenting with sharing your mobile or desktop UIs with the web.
+Compose Multiplatform for web enables experimenting with sharing your mobile or desktop UIs on the web.
 
 Compose Multiplatform for web is based on [Kotlin/Wasm](https://kotl.in/wasm), the newest target for Kotlin Multiplatform projects.
-It allows you to run your code in the browser with all WebAssembly's benefits, such as high and predictable application performance.
+This enables running your code in the browser, leveraging WebAssembly's advantages like high and consistent application performance.
 
-In the next sections, you can find information to try out the Jetsnack application built with Compose Multiplatform for web and Kotlin/Wasm.
+Follow the instructions in the sections below to try out this Jetsnack application built with Compose Multiplatform for web and Kotlin/Wasm.
 
 ## Set up the environment
 
-Before you start, prepare the IDE and browser you require to run the application.
+Before starting, ensure you have the necessary IDE and browser setup to run the application.
 
 ### IDE
 
@@ -52,7 +52,7 @@ It supports Kotlin/Wasm out of the box.
 
 ### Browser (for Kotlin/Wasm target)
 
-To run applications built with Kotlin/Wasm in a browser, you need a browser supporting the [Wasm Garbage Collection (GC) feature](https://github.com/WebAssembly/gc):
+To run Kotlin/Wasm applications in a browser, you need a browser supporting the [Wasm Garbage Collection (GC) feature](https://github.com/WebAssembly/gc):
 
 **Chrome and Chromium-based**
 
@@ -80,33 +80,29 @@ To build and run the Jetsnack application with Compose Multiplatform for web and
 
 1. In IntelliJ IDEA, open the repository.
 2. Navigate to the `compose-jetsnack` project folder.
-3. Run the application by using the commands explained in the following sections.
+3. Run the application by typing one of the following Gradle commands in the terminal:
 
-### Run the web version via Gradle
+* **Web version:**
 
-To run the web version, type the following Gradle command in the terminal: 
+  `./gradlew :web:wasmJsRun`
+  <br>&nbsp;<br>
 
-`./gradlew :web:wasmJsRun`
+  Once the application starts, open the following URL in your browser: 
 
-Once the application starts, open the following URL in your browser: 
+  `http://localhost:8080`
 
-`http://localhost:8080`
+  > **Note:**
+  > The port number can vary. If the port 8080 is unavailable, you can find the corresponding port number printed in the console
+  > after building the application.
 
-> **Note:**
-> The port number can vary. If the 8080 port is unavailable, you can find the corresponding port number printed in the console
-> after building the application.
+* **Desktop version:**
 
-### Run the desktop version via Gradle
+  `./gradlew :desktop:run`
+  <br>&nbsp;<br>
 
-To run the desktop version, type the following Gradle command in the terminal: 
+* **Android application:**
 
-`./gradlew :desktop:run`
-
-### Install the Android application via Gradle
-
-To install the Android application, type the following Gradle command in the terminal: 
-
-`./gradlew :android:installDebug`
+   `./gradlew :android:installDebug`
 
 ## Feedback and questions
 

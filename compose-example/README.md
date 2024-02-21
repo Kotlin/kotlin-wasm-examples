@@ -1,6 +1,6 @@
 # Compose for web example
 
-This example shows a web application built with [Compose Multiplatform for web](#compose-multiplatform-for-web) and [Kotlin/Wasm](https://kotl.in/wasm).
+This example showcases a web application built with [Compose Multiplatform for web](#compose-multiplatform-for-web) and [Kotlin/Wasm](https://kotl.in/wasm).
 
 ![](screenshots/compose-example.png)
 
@@ -12,16 +12,16 @@ This example shows a web application built with [Compose Multiplatform for web](
 >
 > [Join the compose-web community](https://slack-chats.kotlinlang.org/c/compose-web).
 
-Compose Multiplatform for web enables experimenting with sharing your mobile or desktop UIs with the web.
+Compose Multiplatform for web enables experimenting with sharing your mobile or desktop UIs on the web.
 
 Compose Multiplatform for web is based on [Kotlin/Wasm](https://kotl.in/wasm), the newest target for Kotlin Multiplatform projects.
-It allows you to run your code in the browser with all WebAssembly's benefits, such as high and predictable application performance.
+This enables running your code in the browser, leveraging WebAssembly's advantages like high and consistent application performance.
 
-In the next sections, you can find information to try out this application built with Compose Multiplatform for web and Kotlin/Wasm.
+Follow the instructions in the sections below to try out this application built with Compose Multiplatform for web and Kotlin/Wasm.
 
 ## Set up the environment
 
-Before you start, prepare the IDE and browser you require to run the application.
+Before starting, ensure you have the necessary IDE and browser setup to run the application.
 
 ### IDE
 
@@ -58,19 +58,25 @@ To build and run the application:
 
 1. In IntelliJ IDEA, open the repository.
 2. Navigate to the `compose-example` project folder.
-3. Run the application by using the commands explained in the following sections.
+3. Run the application by typing one of the following Gradle commands in the terminal:
 
-### Run the web version via Gradle
+* **Web version:**
 
-To run the web version, type the following Gradle command in the terminal:
+  `./gradlew :composeApp:wasmJsRun`
+  <br>&nbsp;<br>
 
-`./gradlew :composeApp:wasmJsRun`
+  Once the application starts, open the following URL in your browser:
 
-### Run the desktop version via Gradle
+  `http://localhost:8080`
 
-To run the desktop version, type the following Gradle command in the terminal:
+  > **Note:**
+  > The port number can vary. If the port 8080 is unavailable, you can find the corresponding port number printed in the console
+  > after building the application.
 
-`./gradlew :composeApp:run`
+
+* **Desktop version:**
+
+  `./gradlew :composeApp:run`
 
 ## Feedback and questions
 

@@ -1,6 +1,6 @@
 # Kotlin/Wasm image viewer example
 
-This example shows a web version of an image gallery for remote server image viewing. This application is built with Compose Multiplatform and Kotlin/Wasm.
+This example demonstrates a web-based image gallery for viewing images from a remote server. This application is built with Compose Multiplatform and Kotlin/Wasm.
 
 [![Static Badge](https://img.shields.io/badge/online%20demo%20%F0%9F%9A%80-6b57ff?style=for-the-badge)](https://zal.im/wasm/iv).
 
@@ -12,17 +12,17 @@ This example shows a web version of an image gallery for remote server image vie
 > Web support is in [Alpha](https://kotlinlang.org/docs/components-stability.html). It may be changed at any time. You can use it in scenarios before production.
 > We would appreciate your feedback in [GitHub](https://github.com/JetBrains/compose-multiplatform/issues).
 
-Compose Multiplatform for web lets you experiment with sharing your mobile or desktop UIs with the web. Compose Multiplatform for web is based on [Kotlin/Wasm](https://kotl.in/wasm),
+Compose Multiplatform for web lets you experiment with sharing your mobile or desktop UIs on the web. Compose Multiplatform for web is based on [Kotlin/Wasm](https://kotl.in/wasm),
 the newest target for Kotlin Multiplatform projects. 
 
-Compose Multiplatform for web allows you to run your Kotlin code in the browser leveraging all WebAssembly's benefits, such as 
-high and predictable application performance.
+Compose Multiplatform for web allows you to run your Kotlin code in the browser, leveraging all WebAssembly's benefits like 
+high and consistent application performance.
 
-In the next sections, you can find information to try out this application built with Kotlin/Wasm.
+Follow the instructions in the sections below to try out this Kotlin/Wasm application.
 
 ## Set up the environment
 
-Before you start, prepare the IDE and browser you require to run the application.
+Before starting, ensure you have the necessary IDE and browser setup to run the application.
 
 ### IDE
 
@@ -31,7 +31,7 @@ It supports Kotlin/Wasm out of the box.
 
 ### Browser (for Kotlin/Wasm target)
 
-To run applications built with Kotlin/Wasm in a browser, you need a browser supporting the [Wasm Garbage Collection (GC) feature](https://github.com/WebAssembly/gc):
+To run Kotlin/Wasm applications in a browser, you need a browser supporting the [Wasm Garbage Collection (GC) feature](https://github.com/WebAssembly/gc):
 
 **Chrome and Chromium-based**
 
@@ -59,33 +59,30 @@ To build and run the application:
 
 1. In IntelliJ IDEA, open the repository.
 2. Navigate to the `compose-imageviewer` project folder.
-3. Run the application by using the commands explained in the following sections.
+3. Run the application by typing one of the following Gradle commands in the terminal:
+   <br>&nbsp;<br>
 
-### Run the web version via Gradle
+* **Web version:**
 
-To run the web version, type the following Gradle command in the terminal:
+  `./gradlew :web:wasmJsRun`
+  <br>&nbsp;<br>
 
-`./gradlew :webApp:wasmJsRun`
+  Once the application starts, open the following URL in your browser:
 
-Once the application starts, open the following URL in your browser:
+  `http://localhost:8080`
 
-`http://localhost:8080`
+  > **Note:**
+  > The port number can vary. If the port 8080 is unavailable, you can find the corresponding port number printed in the console
+  > after building the application.
 
-> **Note:**
-> The port number can vary. If the 8080 port is unavailable, you can find the corresponding port number printed in the console
-> after building the application.
+* **Desktop version:**
 
-### Run the desktop version via Gradle
+  `./gradlew :desktopApp:run`
+  <br>&nbsp;<br>
 
-To run the desktop version, type the following Gradle command in the terminal:
+* **Android application:**
 
-`./gradlew :desktopApp:run`
-
-### Install the Android application via Gradle
-
-To install the Android application, type the following Gradle command in the terminal:
-
-`./gradlew :androidApp:installDebug`
+  `./gradlew :androidApp:installDebug`
 
 ## Feedback and questions
 

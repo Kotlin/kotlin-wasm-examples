@@ -1,17 +1,17 @@
 # Kotlin/Wasm WASI example
 
-This example shows a simple application using WASI API in Node.js and Deno.
+This example showcases a simple application using WASI API in Node.js and Deno.
 
 ![](screenshots/wasi-output.png)
 
 > **Note:**
 > This example uses a version of 21.0.0-v8-canary.
 
-In the next sections, you can find information try out this application built with Kotlin/Wasm.
+Follow the instructions in the sections below to try out this Kotlin/Wasm application.
 
 ## Set up the environment
 
-Before you start, prepare the IDE you require to run the application.
+Before starting, ensure you have the necessary IDE setup to run the application.
 
 ### IDE
 
@@ -24,35 +24,30 @@ To build and run the application:
 
 1. In IntelliJ IDEA, open the repository.
 2. Navigate to the `wasi-example` project folder.
-3. Run the application by using the commands explained in the following sections.
+3. Run the application by typing one of the following Gradle commands in the terminal:
 
-### Run the program via Gradle with NodeJs
+* **Run the program with NodeJs:**
 
-To run the program, type the following Gradle command in the terminal:
+  `./gradlew wasmWasiNodeRun` 
+  <br>&nbsp;<br>
 
-`./gradlew wasmWasiNodeRun`
+* **Run tests with NodeJs:**
 
-### Run tests via Gradle with NodeJs
+  `./gradlew wasmWasiNodeTest`
+  <br>&nbsp;<br>
 
-To run tests, type the following Gradle command in the terminal:
+* **Run the program with Deno:**
 
-`./gradlew wasmWasiNodeTest`
+  `./gradlew wasmWasiDenoRun`
+  <br>&nbsp;<br>
 
-### Run the program via Gradle with Deno
+* **Run tests with Deno:**
 
-To run the program with Deno, type the following Gradle command in the terminal:
+  `./gradlew wasmWasiDenoTest`
 
-`./gradlew wasmWasiDenoRun`
-
-### Run tests via Gradle with Deno
-
-To run tests with Deno, type the following Gradle command in the terminal:
-
-`./gradlew wasmWasiDenoTest`
-
-> **Note:**
-> For Windows platform, `deno.exe` is expected to be installed. For more information, 
-> see [Deno's installation documentation](https://docs.deno.com/runtime/manual/getting_started/installation).
+  > **Note:**
+  > For Windows platform, ensure `deno.exe` is installed. For more information, 
+  > see [Deno's installation documentation](https://docs.deno.com/runtime/manual/getting_started/installation).
 
 ## Feedback and questions
 

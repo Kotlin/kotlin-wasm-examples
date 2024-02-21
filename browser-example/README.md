@@ -1,6 +1,6 @@
 # Kotlin/Wasm browser example
 
-This example presents a simple app built with Kotlin/Wasm. The app shows "Hello World" in the browser using DOM API.
+This example showcases a Kotlin/Wasm app. The applicationshows "Hello World" in the browser using DOM API.
 
 Check it out:
 
@@ -8,11 +8,11 @@ Check it out:
 
 ![](screenshots/browser-example.png)
 
-In the next sections, you can find information to try out this application built with Kotlin/Wasm.
+Follow the instructions in the sections below to try out this Kotlin/Wasm application.
 
 ## Set up the environment
 
-Before you start, prepare the IDE and browser you require to run the application.
+Before starting, ensure you have the necessary IDE and browser setup to run the application.
 
 ### IDE
 
@@ -21,7 +21,7 @@ It supports Kotlin/Wasm out of the box.
 
 ### Browser (for Kotlin/Wasm target)
 
-To run applications built with Kotlin/Wasm in a browser, you need a browser supporting the [Wasm Garbage Collection (GC) feature](https://github.com/WebAssembly/gc):
+To run Kotlin/Wasm applications in a browser, you need a browser supporting the [Wasm Garbage Collection (GC) feature](https://github.com/WebAssembly/gc):
 
 **Chrome and Chromium-based**
 
@@ -49,11 +49,18 @@ To build and run the application:
 
 1. In IntelliJ IDEA, open the repository.
 2. Navigate to the `browser-example` project folder.
-3. Run the application by using the following command:
+3. Run the application by typing the following Gradle command in the terminal:
 
-```
-./gradlew wasmJsBrowserRun -t
-```
+   `./gradlew wasmJsBrowserRun -t`
+   <br>&nbsp;<br>
+
+Once the application starts, open the following URL in your browser:
+
+`http://localhost:8080`
+
+> **Note:**
+> The port number can vary. If the port 8080 is unavailable, you can find the corresponding port number printed in the console
+> after building the application.
 
 ## Feedback and questions
 
