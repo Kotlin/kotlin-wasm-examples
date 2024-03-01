@@ -14,7 +14,7 @@ expect fun Modifier.notchPadding(): Modifier
 
 private val cache = mutableStateMapOf<String, Painter>()
 
-sealed class LoadState<T> {
+private sealed class LoadState<T> {
     class Loading<T> : LoadState<T>()
     data class Success<T>(val value: T) : LoadState<T>()
     data class Error<T>(val exception: Exception) : LoadState<T>()
@@ -43,7 +43,6 @@ private fun <T> LoadState<T>.orEmpty(emptyValue: T): T = when (this) {
 private val emptyImageBitmap: ImageBitmap by lazy { ImageBitmap(1, 1) }
 
 
-@OptIn(ExperimentalResourceApi::class)
 @Composable
 internal fun painterResourceCached(res: String): Painter {
     return if (cache.containsKey(res)) {
