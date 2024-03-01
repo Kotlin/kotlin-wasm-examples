@@ -34,6 +34,9 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.channels.BufferOverflow
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.asSharedFlow
+import org.jetbrains.compose.resources.painterResource
+import imageviewer.shared.generated.resources.*
+import org.jetbrains.compose.resources.ExperimentalResourceApi
 import java.io.File
 
 class ExternalNavigationEventBus {
@@ -48,7 +51,7 @@ class ExternalNavigationEventBus {
     }
 }
 
-@OptIn(ExperimentalComposeUiApi::class)
+@OptIn(ExperimentalResourceApi::class)
 @Composable
 fun ApplicationScope.ImageViewerDesktop() {
     val toastState = remember { mutableStateOf<ToastState>(ToastState.Hidden) }
@@ -63,7 +66,7 @@ fun ApplicationScope.ImageViewerDesktop() {
             position = WindowPosition.Aligned(Alignment.Center),
             size = getPreferredWindowSize(720, 857)
         ),
-        icon = painterResource("ic_imageviewer_round.png"),
+        icon = painterResource(Res.drawable.ic_imageviewer_round),
         // https://github.com/JetBrains/compose-jb/issues/2741
         onKeyEvent = {
             if (it.type == KeyEventType.KeyUp) {

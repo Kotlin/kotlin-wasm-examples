@@ -2,11 +2,12 @@ import androidx.compose.runtime.*
 import example.imageviewer.*
 import example.imageviewer.model.*
 import org.jetbrains.compose.resources.ExperimentalResourceApi
+import org.jetbrains.compose.resources.InternalResourceApi
 import org.jetbrains.compose.resources.Resource
+import org.jetbrains.compose.resources.ResourceItem
 import org.khronos.webgl.ArrayBuffer
 import org.khronos.webgl.Int8Array
 import org.w3c.xhr.XMLHttpRequest
-import org.w3c.xhr.XMLHttpRequestResponseType
 import kotlin.coroutines.resume
 import kotlin.coroutines.resumeWithException
 import kotlin.coroutines.suspendCoroutine
@@ -20,8 +21,7 @@ actual fun createWrappedHttpClient(): WrappedHttpClient {
     }
 }
 
-@OptIn(ExperimentalResourceApi::class)
-private abstract class AbstractResourceImpl(val path: String) : Resource {
+private abstract class AbstractResourceImpl(val path: String)  {
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
         return if (other is AbstractResourceImpl) {
@@ -36,7 +36,7 @@ private abstract class AbstractResourceImpl(val path: String) : Resource {
     }
 }
 private class JSResourceImpl(path: String) : AbstractResourceImpl(path) {
-    override suspend fun readBytes(): ByteArray {
+     suspend fun readBytes(): ByteArray {
         return suspendCoroutine { continuation ->
             val req = XMLHttpRequest()
             req.open("GET", path, true)

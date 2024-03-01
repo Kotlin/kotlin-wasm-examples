@@ -9,7 +9,7 @@ import example.imageviewer.core.FilterType
 import example.imageviewer.model.*
 import kotlinx.coroutines.CoroutineScope
 import org.jetbrains.compose.resources.ExperimentalResourceApi
-import org.jetbrains.compose.resources.resource
+import imageviewer.shared.generated.resources.*
 
 //import kotlinx.serialization.json.Json
 
@@ -92,10 +92,15 @@ interface ImageProvider {
 }
 
 @OptIn(ExperimentalResourceApi::class)
+suspend fun resourceImageBitmap(resourceName: String): ImageBitmap {
+    return Res.readBytes("drawable/${resourceName}").toImageBitmap()
+}
+
+@OptIn(ExperimentalResourceApi::class)
 val imageProvider: ImageProvider = object : ImageProvider {
     override suspend fun getImage(picture: PictureData): ImageBitmap = when (picture) {
         is PictureData.Resource -> {
-            resource(picture.resource).readBytes().toImageBitmap()
+            resourceImageBitmap(picture.resource)
         }
 
 //        is PictureData.Camera -> {
@@ -105,7 +110,7 @@ val imageProvider: ImageProvider = object : ImageProvider {
 
     override suspend fun getThumbnail(picture: PictureData): ImageBitmap = when (picture) {
         is PictureData.Resource -> {
-            resource(picture.thumbnailResource).readBytes().toImageBitmap()
+            resourceImageBitmap(picture.thumbnailResource)
         }
 
 //        is PictureData.Camera -> {

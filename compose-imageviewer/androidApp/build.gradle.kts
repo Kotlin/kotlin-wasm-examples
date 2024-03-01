@@ -5,7 +5,7 @@ plugins {
 }
 
 kotlin {
-    android()
+    androidTarget()
     sourceSets {
         val androidMain by getting {
             dependencies {
@@ -16,6 +16,7 @@ kotlin {
 }
 
 android {
+    namespace = "example.imageviewer"
     compileSdk = 34
     defaultConfig {
         applicationId = "org.jetbrains.Imageviewer"
@@ -25,7 +26,10 @@ android {
         versionName = "1.0"
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+    kotlin {
+        jvmToolchain(17)
     }
 }
