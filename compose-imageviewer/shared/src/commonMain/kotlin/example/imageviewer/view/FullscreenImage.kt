@@ -24,9 +24,14 @@ import example.imageviewer.Localization
 import example.imageviewer.core.BitmapFilter
 import example.imageviewer.core.FilterType
 import example.imageviewer.model.*
-import example.imageviewer.painterResourceCached
 import example.imageviewer.style.*
+import imageviewer.shared.generated.resources.*
+import imageviewer.shared.generated.resources.Res
+import imageviewer.shared.generated.resources.arrowleft
+import imageviewer.shared.generated.resources.grayscale_off
+import imageviewer.shared.generated.resources.grayscale_on
 import org.jetbrains.compose.resources.ExperimentalResourceApi
+import org.jetbrains.compose.resources.painterResource
 
 @Composable
 internal fun FullscreenImage(
@@ -143,7 +148,7 @@ private fun FullscreenImageBar(
         alignLeftContent = {
             Tooltip(localization.back) {
                 CircularButton(
-                    painterResourceCached("arrowleft.png"),
+                    painterResource(Res.drawable.arrowleft),
                     onClick = { onBack() }
                 )
             }
@@ -197,21 +202,21 @@ private fun FilterButton(
 private fun getFilterImage(active: Boolean, type: FilterType): Painter {
     return when (type) {
         FilterType.GrayScale -> if (active) {
-            painterResourceCached("grayscale_on.png")
+            painterResource(Res.drawable.grayscale_on)
         } else {
-            painterResourceCached("grayscale_off.png")
+            painterResource(Res.drawable.grayscale_off)
         }
 
         FilterType.Pixel -> if (active) {
-            painterResourceCached("pixel_on.png")
+            painterResource(Res.drawable.pixel_on)
         } else {
-            painterResourceCached("pixel_off.png")
+            painterResource(Res.drawable.pixel_off)
         }
 
         FilterType.Blur -> if (active) {
-            painterResourceCached("blur_on.png")
+            painterResource(Res.drawable.blur_on)
         } else {
-            painterResourceCached("blur_off.png")
+            painterResource(Res.drawable.blur_off)
         }
     }
 }

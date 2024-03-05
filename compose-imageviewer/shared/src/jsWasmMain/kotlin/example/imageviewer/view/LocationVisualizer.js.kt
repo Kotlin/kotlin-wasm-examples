@@ -4,7 +4,8 @@ import androidx.compose.foundation.Image
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
-import example.imageviewer.painterResourceCached
+import imageviewer.shared.generated.resources.Res
+import imageviewer.shared.generated.resources.dummy_map
 import org.jetbrains.compose.resources.*
 import org.jetbrains.compose.resources.painterResource
 
@@ -12,7 +13,7 @@ import org.jetbrains.compose.resources.painterResource
 @Composable
 internal actual fun LocationVisualizer(modifier: Modifier) {
     Image(
-        painter = painterResourceCached("dummy_map.png"),
+        painter = painterResource(Res.drawable.dummy_map),
         contentDescription = "Map",
         contentScale = ContentScale.Crop,
         modifier = modifier
