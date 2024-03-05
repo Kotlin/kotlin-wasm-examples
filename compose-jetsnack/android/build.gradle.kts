@@ -18,6 +18,7 @@ dependencies {
 
 android {
     compileSdk = 34
+    namespace = "com.example.android"
     defaultConfig {
         applicationId = "com.example.android"
         minSdk = 24

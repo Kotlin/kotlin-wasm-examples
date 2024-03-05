@@ -9,18 +9,17 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.platform.Font
 import androidx.compose.ui.window.CanvasBasedWindow
 import com.example.jetsnack.JetSnackAppEntryPoint
+import com.example.jetsnack.ui.components.loadImage
+import com.example.jetsnack.ui.components.toByteArray
 import com.example.jetsnack.ui.theme.Karla
 import com.example.jetsnack.ui.theme.Montserrat
-import org.jetbrains.compose.resources.ExperimentalResourceApi
-import org.jetbrains.compose.resources.configureWebResources
-import org.jetbrains.compose.resources.resource
-import org.jetbrains.compose.resources.urlResource
+import org.jetbrains.compose.resources.*
 
 @OptIn(ExperimentalComposeUiApi::class, ExperimentalResourceApi::class)
 fun main() {
     configureWebResources {
         // same as default - this is not necessary to add here. It's here to show this feature
-        setResourceFactory { urlResource("./$it") }
+        resourcePathMapping { path -> "./$path" }
     }
     CanvasBasedWindow("JetSnack", canvasElementId = "jetsnackCanvas") {
         var loading: Boolean by remember { mutableStateOf(true) }
@@ -66,7 +65,7 @@ private suspend fun loadKarlaFont() {
 }
 
 
-@OptIn(ExperimentalResourceApi::class)
-internal suspend fun loadResource(resourcePath: String): ByteArray {
-    return resource(resourcePath).readBytes()
+internal suspend fun loadResource(path: String): ByteArray {
+    return loadImage(path).toByteArray()
 }
+

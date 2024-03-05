@@ -13,7 +13,7 @@ import kotlin.wasm.unsafe.withScopedMemoryAllocator
 
 private class MissingResourceException(url: String): Exception("GET $url failed")
 
-internal suspend fun loadImage(url: String): ArrayBuffer {
+suspend fun loadImage(url: String): ArrayBuffer {
     return suspendCoroutine { continuation ->
         val req = XMLHttpRequest()
         req.open("GET", url, true)
@@ -26,13 +26,12 @@ internal suspend fun loadImage(url: String): ArrayBuffer {
             } else {
                 continuation.resumeWithException(MissingResourceException(url))
             }
-            null
         }
         req.send("")
     }
 }
 
-internal fun ArrayBuffer.toByteArray(): ByteArray {
+fun ArrayBuffer.toByteArray(): ByteArray {
     val source = Int8Array(this, 0, byteLength)
     return jsInt8ArrayToKotlinByteArray(source)
 }
