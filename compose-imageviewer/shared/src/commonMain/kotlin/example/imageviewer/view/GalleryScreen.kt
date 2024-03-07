@@ -31,8 +31,11 @@ import androidx.compose.ui.unit.dp
 import example.imageviewer.*
 import example.imageviewer.icon.IconVisibility
 import example.imageviewer.model.*
-import example.imageviewer.painterResourceCached
 import example.imageviewer.style.ImageviewerColors
+import imageviewer.shared.generated.resources.Res
+import imageviewer.shared.generated.resources.eye
+import imageviewer.shared.generated.resources.list_view
+import imageviewer.shared.generated.resources.plus
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.painterResource
 
@@ -74,7 +77,7 @@ internal fun GalleryScreen(
             TopLayout(
                 alignLeftContent = {},
                 alignRightContent = {
-                    CircularButton(painterResourceCached("list_view.png")) {
+                    CircularButton(painterResource(Res.drawable.list_view)) {
                         galleryPage.toggleGalleryStyle()
                     }
                 },
@@ -144,7 +147,7 @@ private fun BoxScope.MakeNewMemoryMiniature(onClick: () -> Unit) {
             contentAlignment = Alignment.Center
         ) {
             Image(
-                painter = painterResourceCached("plus.png"),
+                painter = painterResource(Res.drawable.plus),
                 contentDescription = null,
                 modifier = Modifier
                     .width(18.dp)
@@ -187,7 +190,7 @@ internal fun SquareMiniature(image: ImageBitmap, isHighlighted: Boolean, onClick
                 contentAlignment = Alignment.Center
             ) {
                 Image(
-                    painter = painterResourceCached("eye.png"),
+                    painter = painterResource(Res.drawable.eye),
                     contentDescription = null,
                     modifier = Modifier
                         .width(17.dp)

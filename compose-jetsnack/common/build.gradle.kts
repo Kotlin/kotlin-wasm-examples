@@ -10,10 +10,10 @@ group = "com.example"
 version = "1.0-SNAPSHOT"
 
 kotlin {
-    android()
+    androidTarget()
     jvm("desktop") {
         compilations.all {
-            kotlinOptions.jvmTarget = "11"
+            kotlinOptions.jvmTarget = "17"
         }
     }
     wasmJs {
@@ -68,24 +68,28 @@ kotlin {
         val desktopTest by getting
 
         val wasmJsMain by getting {
+            dependencies {
+                implementation(kotlin("stdlib"))
+            }
             dependsOn(nonAndroidMain)
         }
     }
 }
 
-compose.experimental {
-    web.application {}
-}
 
 android {
     compileSdk = 34
+    namespace = "com.example.jetsnack"
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
     defaultConfig {
         minSdk = 24
         targetSdk = 33
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+    kotlin {
+        jvmToolchain(17)
     }
 }

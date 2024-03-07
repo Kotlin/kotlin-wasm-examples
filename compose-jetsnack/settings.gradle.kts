@@ -17,4 +17,4 @@ pluginManagement {
 
 rootProject.name = "compose-jetsnack"
 
-include(":android", ":desktop", ":common", ":web")
+include(":common", ":android", ":desktop", ":web")

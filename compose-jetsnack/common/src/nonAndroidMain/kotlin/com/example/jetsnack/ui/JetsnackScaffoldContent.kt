@@ -3,7 +3,6 @@ package com.example.jetsnack.ui
 import androidx.compose.animation.*
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.consumedWindowInsets
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateListOf

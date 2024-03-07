@@ -12,7 +12,7 @@ version = "1.0-SNAPSHOT"
 val ktorVersion = extra["ktor.version"]
 
 kotlin {
-    android()
+    androidTarget()
     jvm("desktop")
 //    ios()
 //    iosSimulatorArm64()
@@ -96,16 +96,25 @@ kotlin {
 
 android {
     compileSdk = 34
+    namespace = "example.imageviewer.shared"
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
     sourceSets["main"].res.srcDirs("src/androidMain/res")
     sourceSets["main"].resources.srcDirs("src/commonMain/resources")
+
+    // TODO: This is a bug in linter actually, this needs to be investigated and reported
+    lint {
+        disable.addAll(setOf("ModifierFactoryExtensionFunction", "ModifierFactoryReturnType", "ModifierFactoryUnreferencedReceiver"))
+    }
 
     defaultConfig {
         minSdk = 26
         targetSdk = 33
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+    kotlin {
+        jvmToolchain(17)
     }
 }

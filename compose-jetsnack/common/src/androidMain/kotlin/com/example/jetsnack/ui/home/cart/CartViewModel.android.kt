@@ -25,7 +25,6 @@ import com.example.jetsnack.model.OrderLine
 import com.example.jetsnack.model.SnackRepo
 import com.example.jetsnack.model.SnackbarManager
 import kotlinx.coroutines.flow.StateFlow
-import kotlin.AllowDifferentMembersInActual
 
 /**
  * Factory for CartViewModel that takes SnackbarManager as a dependency
@@ -41,7 +40,6 @@ fun CartViewModel.Companion.provideFactory(
 }
 
 @OptIn(kotlin.ExperimentalMultiplatform::class)
-@AllowDifferentMembersInActual
 actual abstract class JetSnackCartViewModel actual constructor() : ViewModel() {
     @Composable
     actual fun collectOrderLinesAsState(flow: StateFlow<List<OrderLine>>): State<List<OrderLine>> {

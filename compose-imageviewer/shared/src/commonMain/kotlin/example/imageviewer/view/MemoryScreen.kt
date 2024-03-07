@@ -28,8 +28,11 @@ import example.imageviewer.Dependencies
 import example.imageviewer.LocalImageProvider
 import example.imageviewer.Localization
 import example.imageviewer.model.*
-import example.imageviewer.painterResourceCached
 import example.imageviewer.style.ImageviewerColors
+import imageviewer.shared.generated.resources.Res
+import imageviewer.shared.generated.resources.arrowleft
+import imageviewer.shared.generated.resources.magic
+import imageviewer.shared.generated.resources.trash
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.painterResource
 
@@ -104,7 +107,7 @@ internal fun MemoryScreen(
                         verticalAlignment = Alignment.CenterVertically
                     ) {
                         Image(
-                            painterResourceCached("trash.png"),
+                            painterResource(Res.drawable.trash),
                             contentDescription = null,
                             modifier = Modifier.size(14.dp)
                         )
@@ -124,7 +127,7 @@ internal fun MemoryScreen(
             alignLeftContent = {
                 Tooltip(localization.back) {
                     CircularButton(
-                        painterResourceCached("arrowleft.png"),
+                        painterResource(Res.drawable.arrowleft),
                         onClick = { onBack() }
                     )
                 }
@@ -158,7 +161,7 @@ internal fun BoxScope.MagicButtonOverlay(onClick: () -> Unit) {
     Column(
         modifier = Modifier.align(Alignment.BottomEnd).padding(end = 12.dp, bottom = 16.dp)
     ) {
-        CircularButton(painterResourceCached("magic.png"), onClick)
+        CircularButton(painterResource(Res.drawable.magic), onClick)
     }
 }
 
