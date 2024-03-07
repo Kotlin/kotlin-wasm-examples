@@ -1,7 +1,7 @@
 [versions]
-compose = "1.5.4"
-compose-plugin = "1.6.0-alpha01"
-compose-compiler = "1.5.4"
+compose = "1.5.8"
+compose-plugin = "1.6.0"
+compose-compiler = "1.5.8"
 agp = "8.1.4"
 android-minSdk = "24"
 android-compileSdk = "34"
@@ -13,7 +13,7 @@ androidx-material = "1.10.0"
 androidx-constraintlayout = "2.1.4"
 androidx-test-junit = "1.1.5"
 androidx-espresso-core = "3.5.1"
-kotlin = "1.9.21"
+kotlin = "1.9.22"
 junit = "4.13.2"
 
 [libraries]
