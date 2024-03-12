@@ -93,6 +93,7 @@ fun Project.createDenoExecutableFile(
     resultFileName: String,
 ): TaskProvider<Task> = tasks.register(taskName, Task::class) {
     outputs.dir(outputDirectory)
+    inputs.property("wasmFileName", wasmFileName)
 
     doFirst {
         val denoMjs = File(outputDirectory.get(), resultFileName)
