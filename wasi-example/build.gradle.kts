@@ -91,6 +91,8 @@ fun Project.createDenoExecutableFile(
     outputDirectory: Provider<File>,
     resultFileName: String,
 ): TaskProvider<Task> = tasks.register(taskName, Task::class) {
+    outputs.dir(outputDirectory)
+
     doFirst {
         val denoMjs = File(outputDirectory.get(), resultFileName)
         denoMjs.writeText(getDenoExecutableText(wasmFileName.get()))
@@ -120,7 +122,9 @@ fun Project.createDenoExec(
         }
         dependsOn(denoFileTask)
 
-        group = taskGroup
+        taskGroup?.let {
+            group = it
+        }
 
         description = "Executes tests with Deno"
 
@@ -137,9 +141,11 @@ fun Project.createDenoExec(
 
         newArgs.add(denoFileName)
 
-        args = newArgs
+        args(newArgs)
 
-        workingDir = outputDirectory.get()
+        doFirst {
+            workingDir(outputDirectory)
+        }
     }
 }
 
