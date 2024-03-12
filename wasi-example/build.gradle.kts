@@ -1,5 +1,5 @@
 import org.gradle.internal.os.OperatingSystem
-import org.jetbrains.kotlin.de.undercouch.gradle.tasks.download.Download
+import de.undercouch.gradle.tasks.download.Download
 import org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsExec
 import org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootExtension
 import org.jetbrains.kotlin.gradle.targets.js.testing.KotlinJsTest
@@ -7,7 +7,7 @@ import org.jetbrains.kotlin.gradle.testing.internal.KotlinTestReport
 
 plugins {
     kotlin("multiplatform") version "1.9.20"
-    // kotlin("multiplatform") version "2.0.0-Beta1"
+    id("de.undercouch.download") version "5.6.0"
 }
 
 repositories {
