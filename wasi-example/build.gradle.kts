@@ -168,6 +168,14 @@ kotlin {
     }
 }
 
+// Uncomment following block to turn off using the Exception Handling proposal.
+// Note, with this option the compiler will generate `unreachable` instruction instead of throw, 
+// and a Wasm module will stop execution in this case.
+//
+// tasks.withType<org.jetbrains.kotlin.gradle.dsl.KotlinJsCompile>().configureEach {
+//     kotlinOptions.freeCompilerArgs += listOf("-Xwasm-use-traps-instead-of-exceptions")
+// }
+
 rootProject.the<NodeJsRootExtension>().apply {
     nodeVersion = "21.0.0-v8-canary202309143a48826a08"
     nodeDownloadBaseUrl = "https://nodejs.org/download/v8-canary"
