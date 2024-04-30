@@ -1,7 +1,6 @@
 [versions]
 compose = "1.5.8"
-compose-plugin = "1.6.0"
-compose-compiler = "1.5.8"
+compose-plugin = "1.6.10-beta03"
 agp = "8.1.4"
 android-minSdk = "24"
 android-compileSdk = "34"
@@ -13,12 +12,9 @@ androidx-material = "1.10.0"
 androidx-constraintlayout = "2.1.4"
 androidx-test-junit = "1.1.5"
 androidx-espresso-core = "3.5.1"
-kotlin = "1.9.22"
 junit = "4.13.2"
 
 [libraries]
-kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
-kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 compose-ui = { module = "androidx.compose.ui:ui", version.ref = "compose" }
 compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
@@ -37,4 +33,3 @@ androidx-activity-compose = { module = "androidx.activity:activity-compose", ver
 jetbrainsCompose = { id = "org.jetbrains.compose", version.ref = "compose-plugin" }
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
-kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }

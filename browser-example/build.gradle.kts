@@ -1,15 +1,18 @@
 import org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpackConfig
 
 plugins {
-    kotlin("multiplatform") version "1.9.20"
-    // kotlin("multiplatform") version "2.0.0-Beta1"
+    kotlin("multiplatform")
 }
 
 group = "me.user"
 version = "1.0-SNAPSHOT"
 
+val kotlin_repo_url: String? = project.properties["kotlin_repo_url"] as String?
+
 repositories {
     mavenCentral()
+
+    kotlin_repo_url?.also { maven(it) }
 }
 
 kotlin {
