@@ -6,8 +6,8 @@ import org.jetbrains.kotlin.gradle.targets.js.testing.KotlinJsTest
 import org.jetbrains.kotlin.gradle.testing.internal.KotlinTestReport
 
 plugins {
-    kotlin("multiplatform") version "1.9.20"
-    // kotlin("multiplatform") version "2.0.0-Beta1"
+    // kotlin("multiplatform") version "1.9.20"
+    kotlin("multiplatform") version "2.0.0-RC2"
     id("de.undercouch.download") version "5.6.0"
 }
 
@@ -177,12 +177,11 @@ kotlin {
 // }
 
 rootProject.the<NodeJsRootExtension>().apply {
-    nodeVersion = "22.0.0-nightly202404032241e8c5b3"
-    nodeDownloadBaseUrl = "https://nodejs.org/download/nightly"
+    nodeVersion = "22.0.0"
 }
 
-tasks.withType<org.jetbrains.kotlin.gradle.targets.js.npm.tasks.KotlinNpmInstallTask>().configureEach {
-    args.add("--ignore-engines")
+tasks.withType<NodeJsExec>().forEach {
+    it.nodeArgs.remove("--experimental-wasm-gc")
 }
 
 tasks.withType<KotlinJsTest>().all {

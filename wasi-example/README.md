@@ -26,6 +26,24 @@ To build and run the application:
 2. Navigate to the `wasi-example` project folder.
 3. Run the application by typing one of the following Gradle commands in the terminal:
 
+* **WasmEdge**
+```
+./gradlew compileDevelopmentExecutableKotlinWasmWasi && wasmedge --enable-gc --enable-exception-handling build/compileSync/wasmWasi/main/developmentExecutable/kotlin/kotlin-wasm-wasi-example-wasm-wasi.wasm runTests
+```
+
+Normally it should print
+```
+Start...
+
+# exceptionInFinally
+OK
+
+# tryCatchWithHandleResult
+OK
+
+Done
+```
+
 * **Run the program with NodeJs:**
 
   `./gradlew wasmWasiNodeRun` 
