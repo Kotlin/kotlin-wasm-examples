@@ -1,3 +1,4 @@
+@file:OptIn(ExperimentalWasmJsInterop::class)
 @file:JsModule("./lib.c.mjs")
 
 @JsName("default")
