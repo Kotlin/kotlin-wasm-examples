@@ -22,7 +22,7 @@ kotlin {
     sourceSets {
         wasmJsMain {
             dependencies {
-                implementation(libs.browser)
+                implementation(libs.kotlinx.browser)
             }
         }
     }
