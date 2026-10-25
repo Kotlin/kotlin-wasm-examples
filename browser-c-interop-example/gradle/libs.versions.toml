@@ -1,5 +1,5 @@
 [versions]
-kotlin = "2.2.10"
+kotlin = "2.5.0-Beta2"
 browser = "0.3"
 
 [plugins]
