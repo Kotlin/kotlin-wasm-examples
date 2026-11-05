@@ -1,8 +1,3 @@
-@file:OptIn(ExperimentalWasmDsl::class)
-
-import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
-import org.jetbrains.kotlin.gradle.targets.js.ir.DefaultIncrementalSyncTask
-import org.jetbrains.kotlin.gradle.tasks.Kotlin2JsCompile
 import java.util.*
 
 plugins {
@@ -32,7 +27,7 @@ val props = Properties().apply {
     file("local.properties").inputStream().use(::load)
 }
 
-val compileNativeSources by tasks.registering(Exec::class) {
+val compileNativeSources = tasks.register<Exec>("compileNativeSources") {
     commandLine(
         props.getProperty("PATH_TO_EMCC") ?: error("Provide PATH_TO_EMCC inside local.properties file"),
         "--target=wasm32",
@@ -45,24 +40,7 @@ val compileNativeSources by tasks.registering(Exec::class) {
     outputs.file("build/clang/lib.wasm")
 }
 
-val copyNativeBinariesAndGlueCode by tasks.registering(Copy::class) {
-    dependsOn(compileNativeSources)
-
-    from("./build/clang/lib.wasm")
+tasks.named<ProcessResources>("wasmJsProcessResources") {
+    from(compileNativeSources)
     from("./src/nativeSources/lib.c.mjs")
-
-    val taskName = if (project.hasProperty("isProduction")
-        || project.gradle.startParameter.taskNames.contains("installDist")
-    ) {
-        "wasmJsProductionExecutableCompileSync"
-    } else {
-        "wasmJsDevelopmentExecutableCompileSync"
-    }
-    val syncTask = tasks.named<DefaultIncrementalSyncTask>(taskName)
-
-    into(syncTask.flatMap { it.destinationDirectory })
-}
-
-tasks.withType<Kotlin2JsCompile>().configureEach {
-    dependsOn(copyNativeBinariesAndGlueCode)
 }
