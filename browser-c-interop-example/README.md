@@ -1,25 +1,26 @@
-[![Incubator](https://jb.gg/badges/incubator-plastic.svg)](https://github.com/JetBrains#jetbrains-on-github)
+[![Official project](https://jb.gg/badges/official-plastic.svg)](https://github.com/JetBrains#jetbrains-on-github)
 
 # Kotlin/Wasm Browser Example with C interop
 
 A simple app calling C function from Kotlin/Wasm browser application.
 
-> **Note**
-> You need emscripten to be installed on your machine to compile the example
+> **Note:**
+> You need [Emscripten](https://emscripten.org/docs/getting_started/downloads.html) to be installed on your machine to compile the example.
+> Specify the path to the `emcc` executable in the `PATH_TO_EMCC` property in the `local.properties` file.
 
 ## Build and run
+To build and run the application:
 
-Check out the repo, navigate to the project folder, and use the following command:
+1. In IntelliJ IDEA, open the repository.
+2. Run the application by typing the following Gradle command in the terminal:
 
-### Run via Gradle
+   `./gradlew wasmJsBrowserDevelopmentRun`
 
-`./gradlew wasmJBDR`
-
-# Feedback & Questions
+## Feedback & Questions
 
 Give it a try, and share your feedback and ask questions in the Kotlin Slack [#webassembly](https://slack-chats.kotlinlang.org/c/webassembly) channel (if you’re not a member, [apply here](https://kotl.in/slack)) or on Twitter to [@bashorov](https://twitter.com/bashorov).
 
-# Learn more
+## Learn more
 
 * [Kotlin/Wasm](https://kotl.in/wasm/)
 * [Other examples](../../../#examples)
